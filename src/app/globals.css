@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0000FF;
+  --color-secondary: #050A30;
+  --color-bg-base: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text-base: #111111;
+  --color-accent-glow: #60A5FA;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #0000FF;
+  --secondary: #050A30;
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --text-base: #111111;
+  --accent-glow: #60A5FA;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ============================================================
+   OVERSIZED EDITORIAL TYPOGRAPHY
+   ============================================================ */
+
+.hero-headline {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.02; /* Increased from 0.92 to prevent descender clipping */
+  letter-spacing: -0.04em;
+  font-size: clamp(2.5rem, 6.2vw, 7.2rem); /* Adjusted scaling to fit nicely on screen without wrapping or overflowing the viewport */
+  padding-bottom: 0.05em; /* Prevent clipping at the bottom of letters */
+}
+
+.section-heading-xl {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.2rem, 5.2vw, 4.8rem); /* Adjusted down from 7vw/7rem to prevent overlapping other columns */
+}
+
+.work-item-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 5vw, 6rem);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-item-text:hover {
+  text-shadow: 0 0 40px rgba(96, 165, 250, 0.4), 0 0 80px rgba(0, 0, 255, 0.15);
+  transform: scale(1.02);
+  color: #60A5FA;
+}
+
+/* ============================================================
+   GLASSMORPHISM & UTILITY CLASSES
+   ============================================================ */
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 255, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 16px 40px 0 rgba(96, 165, 250, 0.18);
+  transform: translateY(-4px);
+}
+
+.glass-footer {
+  background: rgba(5, 10, 48, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================================
+   GLOW EFFECTS
+   ============================================================ */
+
+.glow-card-hover {
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(96, 165, 250, 0.15), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glass-card:hover .glow-card-hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0000FF;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   MEGA MENU
+   ============================================================ */
+
+.mega-menu {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 40px rgba(96, 165, 250, 0.06);
 }
