@@ -33,10 +33,10 @@ export default function SyntheticTorporPage() {
                   />
                   <div className="absolute bottom-6 left-6 right-6 glass-card py-4 px-6 rounded-xl border border-white/20 flex justify-between items-center">
                     <div className="flex flex-col">
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">SESSION RECORD</span>
-                      <span className="font-heading text-sm font-semibold text-[#050A30]">THERMAL_DRIFT_SUPPRESSION</span>
+                      {/* <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">SESSION RECORD</span>
+                      <span className="font-heading text-sm font-semibold text-[#050A30]">THERMAL_DRIFT_SUPPRESSION</span> */}
                     </div>
-                    <span className="font-mono text-xs font-bold text-primary">0.035 Hz</span>
+                    {/* <span className="font-mono text-xs font-bold text-primary">0.035 Hz</span> */}
                   </div>
                 </div>
               </FadeIn>
@@ -44,8 +44,8 @@ export default function SyntheticTorporPage() {
 
             <div className="lg:col-span-6">
               <FadeIn direction="up">
-                <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-                  {"//"} WHAT IS SYNTHETIC TORPOR
+                <span className="font-mono text-m tracking-widest text-blue-600 font-semibold uppercase block mb-5">
+                  {"//"} WHAT IS SYNTHETIC TORPOR?
                 </span>
                 <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight text-[#050A30] mb-8">
                   Not Hypothermia. Not Cryogenics. Something New.

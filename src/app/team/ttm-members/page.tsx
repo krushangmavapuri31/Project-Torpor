@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/animations/FadeIn";
+import TeamGrid from "@/components/TeamGrid";
+import { teamMembers } from "@/lib/team-data";
 
 export const metadata: Metadata = {
   title: "TTM Members",
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function TTMMembersPage() {
+  const memberCount = teamMembers.length;
+
   return (
     <>
       <PageHero
@@ -19,28 +23,42 @@ export default function TTMMembersPage() {
       />
 
       <section className="py-24 md:py-36 bg-[#F8FAFC]">
-        <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+          {/* Section header */}
           <FadeIn direction="up">
-            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-              {"//"} RESEARCH COLLECTIVE
+            <span className="font-mono text-m tracking-widest text-blue-600 font-semibold uppercase block mb-4">
+              {"//"} MISSION CREW
             </span>
             <h2 className="font-heading text-3xl md:text-5xl font-bold leading-snug tracking-tight text-[#050A30]">
-              Multidisciplinary expertise across six research domains.
+              Global Research Team
             </h2>
+            {/* Stats bar */}
+            <div className="flex flex-wrap gap-6 mt-5 mb-4">
+              <span className="font-mono text-xs text-slate-500 tracking-widest uppercase">
+                {memberCount} Members
+              </span>
+              <span className="font-mono text-xs text-slate-300">·</span>
+              <span className="font-mono text-xs text-slate-500 tracking-widest uppercase">
+                Multiple Countries
+              </span>
+              <span className="font-mono text-xs text-slate-300">·</span>
+              <span className="font-mono text-xs text-slate-500 tracking-widest uppercase">
+                10 Research Domains
+              </span>
+            </div>
+            <p className="text-base text-slate-500 font-light leading-relaxed max-w-2xl mt-2">
+              Project Torpor brings together researchers, engineers, communicators,
+              and advisors from diverse disciplines across the globe to advance
+              synthetic torpor research and its applications in space medicine.
+            </p>
           </FadeIn>
 
-          <FadeIn direction="up" delay={0.2} className="mt-12">
-            <div className="border-l-2 border-primary pl-6 py-2">
-              <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
-                Team Directory
-              </p>
-              <p className="text-base text-slate-600 mt-2 font-light leading-relaxed">
-                Team member profiles, research specializations, and publication
-                records are being compiled. The full TTM directory will be
-                available following the next program review cycle.
-              </p>
-            </div>
-          </FadeIn>
+          {/* Team grid + filter + drawer — all managed client-side */}
+          <div className="mt-14">
+            <TeamGrid />
+          </div>
+
         </div>
       </section>
     </>
