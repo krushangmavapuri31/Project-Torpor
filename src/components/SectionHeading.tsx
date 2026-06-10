@@ -22,7 +22,7 @@ export default function SectionHeading({
       <div className="flex flex-col gap-4">
         {number && (
           <span className={`font-mono text-sm tracking-widest ${light ? "text-blue-400" : "text-blue-600"} font-medium`}>
-            // SECTION {number}
+            {"//"} SECTION {number}
           </span>
         )}
         <h2 className={`font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight ${light ? "text-white" : "text-[#111111]"}`}>

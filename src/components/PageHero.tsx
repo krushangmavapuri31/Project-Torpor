@@ -57,8 +57,8 @@ export default function PageHero({
         {/* Lab code */}
         {labCode && (
           <FadeIn direction="none" delay={0.15} className="mb-4">
-            <span className="font-mono text-xs font-semibold tracking-[0.4em] text-accent-glow uppercase">
-              // {labCode}
+            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
+              {"//"} {labCode}
             </span>
           </FadeIn>
         )}

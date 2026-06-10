@@ -26,6 +26,8 @@ export default function Footer() {
           <Link href="/synthetic-torpor" className="hover:text-white transition-colors">Synthetic Torpor</Link>
           <span>•</span>
           <Link href="/work" className="hover:text-white transition-colors">Our Work</Link>
+          <span>•</span>
+          <Link href="/team/astronaut-candidate" className="hover:text-white transition-colors">Team</Link>
         </div>
 
         {/* Right: Copyright */}

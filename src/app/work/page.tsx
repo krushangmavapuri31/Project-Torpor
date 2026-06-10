@@ -27,8 +27,8 @@ export default function WorkPage() {
         {/* Section label */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-16">
           <FadeIn direction="up" delay={0.1}>
-            <span className="font-mono text-xs font-semibold tracking-[0.4em] text-accent-glow uppercase">
-              // RESEARCH DIRECTORY
+            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
+              {"//"} RESEARCH DIRECTORY
             </span>
           </FadeIn>
           <FadeIn direction="up" delay={0.2}>

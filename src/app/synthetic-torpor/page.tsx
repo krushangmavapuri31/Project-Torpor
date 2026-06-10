@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/animations/FadeIn";
 import ParallaxImage from "@/components/animations/ParallaxImage";
-import { Shield, Zap, RefreshCw, Syringe, Rocket, HeartPulse } from "lucide-react";
+import MechanicsTimeline from "@/components/sections/MechanicsTimeline";
 
 export const metadata: Metadata = {
   title: "Synthetic Torpor",
@@ -45,7 +45,7 @@ export default function SyntheticTorporPage() {
             <div className="lg:col-span-6">
               <FadeIn direction="up">
                 <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-                  // WHAT IS SYNTHETIC TORPOR
+                  {"//"} WHAT IS SYNTHETIC TORPOR
                 </span>
                 <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight text-[#050A30] mb-8">
                   Not Hypothermia. Not Cryogenics. Something New.
@@ -69,49 +69,8 @@ export default function SyntheticTorporPage() {
         </div>
       </section>
 
-      {/* Metabolic Suppression */}
-      <section className="py-24 md:py-36 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <FadeIn direction="up">
-            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-              // METABOLIC SUPPRESSION
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight text-[#050A30] mb-16">
-              The Mechanics of Suspension
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Shield className="w-6 h-6 text-primary" />,
-                title: "Neuroprotection Protocols",
-                desc: "Keeps cerebral blood flow optimized at reduced metabolic states, preventing hypoxia and preserving neural integrity.",
-              },
-              {
-                icon: <Zap className="w-6 h-6 text-primary" />,
-                title: "Metabolic Reduction",
-                desc: "Reduces cellular energy consumption by up to 95%, conserving critical oxygen and water reserves for extended missions.",
-              },
-              {
-                icon: <RefreshCw className="w-6 h-6 text-primary" />,
-                title: "Rapid Reversibility",
-                desc: "Warm-up cycles within a 4-hour window restore full cognitive and physical status with zero degradation.",
-              },
-            ].map((feat, idx) => (
-              <FadeIn key={feat.title} direction="up" delay={idx * 0.1}>
-                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:border-primary/20 transition-all duration-300 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-100 flex items-center justify-center shadow-sm mb-6">
-                    {feat.icon}
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-[#050A30] mb-3">{feat.title}</h3>
-                  <p className="text-slate-600 font-light leading-relaxed">{feat.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Metabolic Suppression — Process Timeline */}
+      <MechanicsTimeline />
     </>
   );
 }

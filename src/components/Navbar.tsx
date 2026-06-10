@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -21,15 +21,26 @@ const navItems = [
       { name: "Research Archive", href: "/work/research-archive" },
     ],
   },
+  {
+    name: "Team Information",
+    href: "/team",
+    children: [
+      { name: "Astronaut Candidate", href: "/team/astronaut-candidate" },
+      { name: "TTM Members", href: "/team/ttm-members" },
+    ],
+  },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
-  const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpandedItem, setMobileExpandedItem] = useState<string | null>(
+    null
+  );
   const pathname = usePathname();
-  const megaTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -38,29 +49,60 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
+  // Close menus on route change
   useEffect(() => {
-    setMobileOpen(false);
-    setMegaOpen(false);
+    const timeout = setTimeout(() => {
+      setMobileOpen(false);
+      setOpenDropdown(null);
+      setMobileExpandedItem(null);
+    }, 0);
+    return () => clearTimeout(timeout);
   }, [pathname]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdown on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
-  const handleMegaEnter = () => {
-    if (megaTimeout.current) clearTimeout(megaTimeout.current);
-    setMegaOpen(true);
-  };
+  const handleDropdownEnter = useCallback((name: string) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(name);
+  }, []);
 
-  const handleMegaLeave = () => {
-    megaTimeout.current = setTimeout(() => setMegaOpen(false), 200);
+  const handleDropdownLeave = useCallback(() => {
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 200);
+  }, []);
+
+  const toggleMobileExpand = (name: string) => {
+    setMobileExpandedItem((prev) => (prev === name ? null : name));
   };
 
   return (
     <>
       <nav
+        ref={navRef}
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-out ${
           scrolled
             ? "bg-white/45 border-b border-white/45 backdrop-blur-2xl saturate-[160%] shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3.5"
@@ -82,8 +124,12 @@ export default function Navbar() {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={item.children ? handleMegaEnter : undefined}
-                onMouseLeave={item.children ? handleMegaLeave : undefined}
+                onMouseEnter={
+                  item.children
+                    ? () => handleDropdownEnter(item.name)
+                    : undefined
+                }
+                onMouseLeave={item.children ? handleDropdownLeave : undefined}
               >
                 <Link
                   href={item.href}
@@ -92,27 +138,37 @@ export default function Navbar() {
                       ? "text-primary bg-primary/[0.06] border-primary/20 backdrop-blur-xs shadow-2xs"
                       : "text-slate-700 hover:text-primary hover:bg-white/40 hover:backdrop-blur-md hover:border-white/50 hover:shadow-xs"
                   }`}
+                  onFocus={
+                    item.children
+                      ? () => handleDropdownEnter(item.name)
+                      : undefined
+                  }
                 >
                   {item.name}
                   {item.children && (
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                        megaOpen ? "rotate-180" : ""
+                        openDropdown === item.name ? "rotate-180" : ""
                       }`}
                     />
                   )}
                 </Link>
 
-                {/* Mega Menu Dropdown */}
+                {/* Dropdown Menu */}
                 {item.children && (
                   <AnimatePresence>
-                    {megaOpen && (
+                    {openDropdown === item.name && (
                       <motion.div
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{
+                          duration: 0.25,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[320px] rounded-2xl p-3 z-50 bg-white/50 border border-white/50 backdrop-blur-2xl saturate-[150%] shadow-[0_20px_50px_rgba(0,0,0,0.06)]"
+                        role="menu"
+                        aria-label={`${item.name} submenu`}
                       >
                         {/* Arrow pointer */}
                         <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-white/50 border-l border-t border-white/50" />
@@ -122,6 +178,7 @@ export default function Navbar() {
                             <Link
                               key={child.href}
                               href={child.href}
+                              role="menuitem"
                               className={`px-4 py-3 rounded-xl text-[12px] font-sans font-bold uppercase tracking-[0.12em] transition-all duration-300 group flex items-center justify-between border border-transparent ${
                                 isActive(child.href)
                                   ? "bg-primary/6 text-primary border-primary/25"
@@ -183,7 +240,7 @@ export default function Navbar() {
                   {item.children ? (
                     <>
                       <button
-                        onClick={() => setMobileWorkOpen(!mobileWorkOpen)}
+                        onClick={() => toggleMobileExpand(item.name)}
                         className={`w-full flex items-center justify-between text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${
                           isActive(item.href)
                             ? "text-primary border-primary/20"
@@ -193,12 +250,14 @@ export default function Navbar() {
                         {item.name.toUpperCase()}
                         <ChevronDown
                           className={`w-5 h-5 transition-transform ${
-                            mobileWorkOpen ? "rotate-180" : ""
+                            mobileExpandedItem === item.name
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
                       <AnimatePresence>
-                        {mobileWorkOpen && (
+                        {mobileExpandedItem === item.name && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
@@ -210,7 +269,7 @@ export default function Navbar() {
                               href={item.href}
                               className="block py-2 text-sm font-mono text-primary uppercase tracking-widest border-b border-slate-50"
                             >
-                              View All Work →
+                              View All →
                             </Link>
                             {item.children.map((child) => (
                               <Link

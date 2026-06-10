@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+
 
 // ============================================================
 // Centralized research domain data for /work and /work/[slug]

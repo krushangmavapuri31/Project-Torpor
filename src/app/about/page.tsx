@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn direction="up">
             <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-              // MISSION
+              {"//"} MISSION
             </span>
             <h2 className="font-heading text-3xl md:text-5xl font-bold leading-snug tracking-tight text-[#050A30]">
               Project Torpor is a research initiative exploring synthetic
@@ -69,31 +69,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Scientific Disciplines */}
+      {/* Scientific Disciplines — Editorial Layout */}
       <section className="py-24 md:py-36 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <FadeIn direction="up">
-            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-              // DISCIPLINES
-            </span>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight text-[#050A30] mb-16">
-              Scientific Domains
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {disciplines.map((d, i) => (
-              <FadeIn key={d.title} direction="up" delay={i * 0.1}>
-                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:border-primary/20 transition-all duration-300">
-                  <h3 className="font-heading text-xl font-bold text-[#050A30] mb-3">
-                    {d.title}
-                  </h3>
-                  <p className="text-slate-600 font-light leading-relaxed">
-                    {d.description}
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            {/* Left: Label + Heading */}
+            <div className="lg:col-span-5">
+              <FadeIn direction="up">
+                <h3 className="font-mono text-sm tracking-widest text-blue-600 font-medium mb-3">
+                  {"//"} DISCIPLINES
+                </h3>
+                <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight text-[#050A30] leading-tight">
+                  Scientific Domains
+                </h2>
               </FadeIn>
-            ))}
+              <FadeIn direction="up" delay={0.15}>
+                <p className="mt-6 text-slate-500 font-light text-base md:text-lg leading-relaxed">
+                  Four core research pillars driving the science of human
+                  hibernation — from neural circuitry to pharmacological
+                  intervention.
+                </p>
+              </FadeIn>
+            </div>
+
+            {/* Right: Numbered vertical list */}
+            <div className="lg:col-span-7">
+              {disciplines.map((d, i) => (
+                <FadeIn key={d.title} direction="up" delay={0.1 + i * 0.1}>
+                  <div
+                    className={`domain-item cursor-default py-7 ${
+                      i < disciplines.length - 1
+                        ? "border-b border-slate-200"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex gap-5 items-start">
+                      {/* Number */}
+                      <span className="domain-number font-mono text-sm font-bold text-slate-300 mt-0.5 shrink-0 tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+
+                      {/* Content */}
+                      <div className="flex-1">
+                        <h3 className="domain-title font-heading text-lg md:text-xl font-bold text-[#050A30] tracking-tight">
+                          {d.title}
+                        </h3>
+                        <p className="text-slate-500 font-light text-sm md:text-base leading-relaxed mt-2">
+                          {d.description}
+                        </p>
+                        {/* Accent line — expands on hover */}
+                        <div className="domain-accent-line mt-4" />
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>

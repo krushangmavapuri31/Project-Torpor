@@ -45,14 +45,9 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
-              {/* Left: Section number + heading */}
+              {/* Left: Section heading */}
               <div className="lg:col-span-7">
                 <FadeIn direction="up" delay={0.1}>
-                  <span className="font-mono text-sm tracking-widest text-blue-600 font-medium block mb-4">
-                    // SECTION {preview.number}
-                  </span>
-                </FadeIn>
-                <FadeIn direction="up" delay={0.2}>
                   <h2 className="section-heading-xl text-[#050A30] uppercase">
                     {preview.title}
                   </h2>

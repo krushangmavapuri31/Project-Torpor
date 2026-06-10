@@ -56,7 +56,7 @@ export default async function WorkChildPage({
             <div className="max-w-4xl">
               <FadeIn direction="up">
                 <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-                  // {section.heading.toUpperCase()}
+                  {"//"} {section.heading.toUpperCase()}
                 </span>
                 <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight text-[#050A30] mb-8">
                   {section.heading}
@@ -76,9 +76,9 @@ export default async function WorkChildPage({
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <FadeIn direction="up">
-            <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-              // KEY FOCUS AREAS
-            </span>
+            <h3 className="font-mono text-sm tracking-widest text-blue-600 font-medium mb-3">
+              {"//"} KEY FOCUS AREAS
+            </h3>
             <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight text-[#050A30] mb-16">
               Research Focus
             </h2>
@@ -106,9 +106,9 @@ export default async function WorkChildPage({
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-4xl">
             <FadeIn direction="up">
-              <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
-                // FUTURE DIRECTION
-              </span>
+              <h3 className="font-mono text-xs tracking-widest text-blue-600 font-medium mb-3">
+                {"//"} FUTURE DIRECTION
+              </h3>
               <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight text-[#050A30] mb-8">
                 What Comes Next
               </h2>
