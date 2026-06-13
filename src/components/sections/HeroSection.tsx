@@ -7,7 +7,7 @@ import FadeIn from "../animations/FadeIn";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-16">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-24 md:pt-32">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-12 flex flex-col justify-between h-[85vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-6 md:pt-8 flex flex-col justify-between h-[85vh]">
         {/* Empty spacer to keep flex layout balanced */}
         <div />
 

@@ -21,7 +21,7 @@ export default function PageHero({
   labCode,
 }: PageHeroProps) {
   return (
-    <section className="relative min-h-[70vh] w-full flex items-end overflow-hidden bg-[#050A30] pt-24 pb-16 md:pb-24">
+    <section className="relative min-h-[70vh] w-full flex items-end overflow-hidden bg-[#050A30] pt-32 md:pt-40 pb-16 md:pb-24">
       {/* Background Image */}
       {imageSrc && (
         <div className="absolute inset-0 z-0">

@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/animations/FadeIn";
 
@@ -40,6 +43,42 @@ export default function AstronautCandidatePage() {
                 completion of the qualification phase.
               </p>
             </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.4} className="mt-16">
+            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden border border-slate-200/50 bg-white shadow-sm">
+              <Image
+                src="/Astronaut.png"
+                alt="Astronaut Candidate Profile"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Join CTA */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+          <FadeIn direction="up">
+            <p className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase mb-4">
+              {"//"} Open Applications
+            </p>
+            <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight text-[#050A30] mb-4">
+              Interested in contributing to Project Torpor?
+            </h2>
+            <p className="text-slate-500 font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-8">
+              We are looking for researchers, engineers, and scientists to join
+              our mission.
+            </p>
+            <Link
+              href="/join"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary hover:text-blue-700 transition-colors group"
+            >
+              Apply Now
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
           </FadeIn>
         </div>
       </section>

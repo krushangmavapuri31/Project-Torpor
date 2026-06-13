@@ -31,7 +31,7 @@ export default function SyntheticTorporPage() {
                     alt="Cryo-hibernation laboratory"
                     containerClassName="w-full h-full min-h-[350px] md:min-h-[450px]"
                   />
-                  <div className="absolute bottom-6 left-6 right-6 glass-card py-4 px-6 rounded-xl border border-white/20 flex justify-between items-center">
+                  <div>
                     <div className="flex flex-col">
                       {/* <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400">SESSION RECORD</span>
                       <span className="font-heading text-sm font-semibold text-[#050A30]">THERMAL_DRIFT_SUPPRESSION</span> */}

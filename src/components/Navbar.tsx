@@ -29,6 +29,7 @@ const navItems = [
       { name: "TTM Members", href: "/team/ttm-members" },
     ],
   },
+  { name: "Join Torpor", href: "/join" },
 ];
 
 export default function Navbar() {
@@ -103,19 +104,19 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-out ${
-          scrolled
-            ? "bg-white/45 border-b border-white/45 backdrop-blur-2xl saturate-[160%] shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3.5"
-            : "bg-white/30 border-b border-white/20 backdrop-blur-xl saturate-[140%] py-5"
-        }`}
+        className={`fixed z-50 top-[20px] md:top-[30px] left-1/2 -translate-x-1/2 w-[calc(100%-80px)] md:w-[calc(100%-120px)] max-w-7xl transition-all duration-500 ease-out rounded-[40px] md:rounded-[60px] ${scrolled
+          ? "bg-white/45 border border-white/40 backdrop-blur-[12px] saturate-[160%] shadow-[0_8px_30px_rgba(0,0,0,0.1)] py-2.5"
+          : "bg-white/35 border border-white/25 backdrop-blur-[12px] saturate-[140%] shadow-[0_8px_30px_rgba(0,0,0,0.06)] py-3.5"
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div className="w-full px-6 md:px-10 flex justify-between items-center">
           {/* Logo */}
           <Link
             href="/"
             className="font-heading text-xl md:text-2xl font-bold tracking-[0.22em] text-[#050A30] hover:opacity-80 transition-opacity"
           >
-            PROJECT <span className="text-primary">TORPOR</span>
+            <h1 className="text-gray-200 uppercase text-4xl font-extrabold">PROJECT</h1>
+            <h1 className="text-gray-200 text-5xl font-extrabold">TORPOR.</h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -133,11 +134,10 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className={`relative text-[13px] font-sans font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1.5 border border-transparent ${
-                    isActive(item.href)
-                      ? "text-primary bg-primary/[0.06] border-primary/20 backdrop-blur-xs shadow-2xs"
-                      : "text-slate-700 hover:text-primary hover:bg-white/40 hover:backdrop-blur-md hover:border-white/50 hover:shadow-xs"
-                  }`}
+                  className={`relative text-[15px] font-sans font-extrabold uppercase tracking-[0.15em] px-5 py-3 rounded-full transition-all duration-300 flex items-center gap-1.5 border border-transparent ${isActive(item.href)
+                    ? "text-primary bg-primary/[0.06] border-primary/20 backdrop-blur-xs shadow-2xs"
+                    : "text-slate-700 hover:text-primary hover:bg-white/40 hover:backdrop-blur-md hover:border-white/50 hover:shadow-xs"
+                    }`}
                   onFocus={
                     item.children
                       ? () => handleDropdownEnter(item.name)
@@ -147,9 +147,8 @@ export default function Navbar() {
                   {item.name}
                   {item.children && (
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                        openDropdown === item.name ? "rotate-180" : ""
-                      }`}
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${openDropdown === item.name ? "rotate-180" : ""
+                        }`}
                     />
                   )}
                 </Link>
@@ -179,11 +178,10 @@ export default function Navbar() {
                               key={child.href}
                               href={child.href}
                               role="menuitem"
-                              className={`px-4 py-3 rounded-xl text-[12px] font-sans font-bold uppercase tracking-[0.12em] transition-all duration-300 group flex items-center justify-between border border-transparent ${
-                                isActive(child.href)
-                                  ? "bg-primary/6 text-primary border-primary/25"
-                                  : "text-slate-700 hover:bg-white/40 hover:backdrop-blur-md hover:border-white/50 hover:shadow-2xs hover:text-primary"
-                              }`}
+                              className={`px-5 py-3.5 rounded-xl text-[14px] font-sans font-extrabold uppercase tracking-[0.12em] transition-all duration-300 group flex items-center justify-between border border-transparent ${isActive(child.href)
+                                ? "bg-primary/6 text-primary border-primary/25"
+                                : "text-slate-700 hover:bg-white/40 hover:backdrop-blur-md hover:border-white/50 hover:shadow-2xs hover:text-primary"
+                                }`}
                             >
                               {child.name}
                               <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -221,16 +219,15 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-md pt-24 px-8 flex flex-col lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-md pt-[150px] px-8 flex flex-col lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-2 mt-4">
               <Link
                 href="/"
-                className={`text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${
-                  pathname === "/"
-                    ? "text-primary border-primary/20"
-                    : "text-slate-800"
-                }`}
+                className={`text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${pathname === "/"
+                  ? "text-primary border-primary/20"
+                  : "text-slate-800"
+                  }`}
               >
                 HOME
               </Link>
@@ -241,19 +238,17 @@ export default function Navbar() {
                     <>
                       <button
                         onClick={() => toggleMobileExpand(item.name)}
-                        className={`w-full flex items-center justify-between text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${
-                          isActive(item.href)
-                            ? "text-primary border-primary/20"
-                            : "text-slate-800"
-                        }`}
+                        className={`w-full flex items-center justify-between text-left text-5xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${isActive(item.href)
+                          ? "text-primary border-primary/20"
+                          : "text-slate-800"
+                          }`}
                       >
                         {item.name.toUpperCase()}
                         <ChevronDown
-                          className={`w-5 h-5 transition-transform ${
-                            mobileExpandedItem === item.name
-                              ? "rotate-180"
-                              : ""
-                          }`}
+                          className={`w-5 h-5 transition-transform ${mobileExpandedItem === item.name
+                            ? "rotate-180"
+                            : ""
+                            }`}
                         />
                       </button>
                       <AnimatePresence>
@@ -275,11 +270,10 @@ export default function Navbar() {
                               <Link
                                 key={child.href}
                                 href={child.href}
-                                className={`block py-2.5 text-base font-heading tracking-wide border-b border-slate-50 ${
-                                  isActive(child.href)
-                                    ? "text-primary font-semibold"
-                                    : "text-slate-600"
-                                }`}
+                                className={`block py-2.5 text-base font-heading tracking-wide border-b border-slate-50 ${isActive(child.href)
+                                  ? "text-primary font-semibold"
+                                  : "text-slate-600"
+                                  }`}
                               >
                                 {child.name}
                               </Link>
@@ -291,11 +285,10 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${
-                        isActive(item.href)
-                          ? "text-primary border-primary/20"
-                          : "text-slate-800"
-                      }`}
+                      className={`block text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${isActive(item.href)
+                        ? "text-primary border-primary/20"
+                        : "text-slate-800"
+                        }`}
                     >
                       {item.name.toUpperCase()}
                     </Link>
