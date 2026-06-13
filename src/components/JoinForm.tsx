@@ -9,6 +9,7 @@ import * as z from "zod";
 import { supabase } from "@/lib/supabase";
 import FadeIn from "@/components/animations/FadeIn";
 
+
 const backgroundOptions = [
   "Aerospace Engineering",
   "Biology / Physiology",

@@ -182,20 +182,4 @@ export const teamMembers: TeamMember[] = [
     image: "/images/team/PRAYAG.png",
     category: "engineering",
   },
-
-  {
-    name: "Pushti Shah",
-    education: "B.Tech ECE | MIT Manipal | CGPA 9.13",
-    majorRole: "Software Handler",
-    majorDescription:
-      "Builds machine learning pipelines, manages research datasets, and develops classification systems.",
-    specialRole: "Neural Signal Analyst",
-    specialDescription:
-      "Applies AI and computer vision techniques to analyze EEG and brain-activity datasets.",
-    domain: "Brain Activity Monitoring in Torpor",
-    domainDescription:
-      "Researches EEG monitoring, neural suppression patterns, and cortical activity during torpor.",
-    image: "/images/team/PUSHTI.png",
-    category: "engineering",
-  },
 ];
