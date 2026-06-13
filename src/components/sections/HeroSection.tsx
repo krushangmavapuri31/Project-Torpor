@@ -7,7 +7,7 @@ import FadeIn from "../animations/FadeIn";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-24 md:pt-32">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-20 md:pt-32">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
           <FadeIn direction="up" delay={0.3} duration={1}>
             <p
-              className="text-black-400 text-lg md:text-2xl font-light leading-relaxed max-w-4xl mt-10"
+              className="text-slate-300 text-base md:text-lg lg:text-2xl font-light leading-relaxed max-w-4xl mt-6 md:mt-10"
             >
               Exploring synthetic torpor, metabolic suppression, and human
               hibernation technologies for future medicine and deep-space exploration.

@@ -41,7 +41,7 @@ export default function AboutPage() {
       />
 
       {/* Mission */}
-      <section className="py-24 md:py-36 bg-[#F8FAFC]">
+      <section className="py-16 md:py-24 lg:py-36 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <FadeIn direction="up">
             <span className="font-mono text-xs tracking-widest text-blue-600 font-semibold uppercase block mb-4">
@@ -70,7 +70,7 @@ export default function AboutPage() {
       </section>
 
       {/* Scientific Disciplines — Timeline Layout */}
-      <section className="py-24 md:py-36 bg-[#0B0B0B]">
+      <section className="py-16 md:py-24 lg:py-36 bg-[#0B0B0B]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           {/* Section Header */}
           <div className="mb-20 text-center md:text-left">

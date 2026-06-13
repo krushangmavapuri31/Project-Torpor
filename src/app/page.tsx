@@ -39,7 +39,7 @@ export default function Home() {
       {previews.map((preview, idx) => (
         <section
           key={preview.title}
-          className={`py-24 md:py-36 ${
+          className={`py-16 md:py-24 lg:py-36 ${
             idx % 2 === 0 ? "bg-[#F8FAFC]" : "bg-white"
           } relative overflow-hidden`}
         >

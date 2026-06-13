@@ -182,9 +182,9 @@ export default function MechanicsTimeline() {
 
           {/* ── Mobile: Vertical Timeline ── */}
           <div className="md:hidden">
-            <div className="relative pl-12">
+            <div className="relative pl-8">
               {/* Vertical line */}
-              <div className="absolute left-[18px] top-0 bottom-0 timeline-vertical-line" />
+              <div className="absolute left-[14px] top-0 bottom-0 timeline-vertical-line" />
 
               {steps.map((step, idx) => (
                 <motion.div
@@ -196,9 +196,9 @@ export default function MechanicsTimeline() {
                   className={`relative ${idx < steps.length - 1 ? "pb-14" : ""}`}
                 >
                   {/* Dot on the line */}
-                  <div className="absolute left-[-30px] top-0">
-                    <div className="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center bg-white relative z-10">
-                      <span className="font-mono text-[11px] font-bold text-primary">
+                  <div className="absolute left-[-24px] top-0">
+                    <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center bg-white relative z-10">
+                      <span className="font-mono text-[10px] font-bold text-primary">
                         {step.number}
                       </span>
                     </div>
@@ -211,7 +211,7 @@ export default function MechanicsTimeline() {
                   {/* Arrow between steps */}
                   {idx < steps.length - 1 && (
                     <motion.div
-                      className="absolute left-[-22px] bottom-4"
+                      className="absolute left-[-18px] bottom-4"
                       custom={idx}
                       variants={{
                         hidden: { opacity: 0 },

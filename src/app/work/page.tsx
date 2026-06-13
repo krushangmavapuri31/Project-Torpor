@@ -7,9 +7,9 @@ import FadeIn from "@/components/animations/FadeIn";
 
 export default function WorkPage() {
   return (
-    <div className="min-h-screen bg-[#0B0B0B] pt-32 pb-32 font-sans text-[#F5F5F5]">
+    <div className="min-h-screen bg-[#0B0B0B] pt-24 md:pt-32 pb-24 md:pb-32 font-sans text-[#F5F5F5]">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-32 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-20 md:mb-32 text-center md:text-left">
         <FadeIn direction="up">
           <h3 className="font-mono text-sm tracking-widest text-[#6B8AFD] font-medium mb-4 uppercase">
             {"//"} Research Directory

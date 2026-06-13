@@ -216,11 +216,11 @@ export default function JoinForm() {
           SECTION 1 — Basic Information
          ──────────────────────────────────────────────── */}
       <FadeIn direction="up">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <p className="font-mono text-xs tracking-widest text-[#6B8AFD] uppercase mb-3">
             01 — Basic Information
           </p>
-          <h2 className="font-sans text-2xl md:text-3xl font-bold text-[#F5F5F5] mb-10">
+          <h2 className="font-sans text-xl md:text-3xl font-bold text-[#F5F5F5] mb-8 md:mb-10">
             Tell us about yourself
           </h2>
 
@@ -271,11 +271,11 @@ export default function JoinForm() {
           SECTION 2 — Motivation & Background
          ──────────────────────────────────────────────── */}
       <FadeIn direction="up">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <p className="font-mono text-xs tracking-widest text-[#6B8AFD] uppercase mb-3">
             02 — Motivation & Background
           </p>
-          <h2 className="font-sans text-2xl md:text-3xl font-bold text-[#F5F5F5] mb-10">
+          <h2 className="font-sans text-xl md:text-3xl font-bold text-[#F5F5F5] mb-8 md:mb-10">
             Your interest in torpor research
           </h2>
 
@@ -376,11 +376,11 @@ export default function JoinForm() {
           SECTION 3 — Skills & Contributions
          ──────────────────────────────────────────────── */}
       <FadeIn direction="up">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <p className="font-mono text-xs tracking-widest text-[#6B8AFD] uppercase mb-3">
             03 — Skills & Contributions
           </p>
-          <h2 className="font-sans text-2xl md:text-3xl font-bold text-[#F5F5F5] mb-10">
+          <h2 className="font-sans text-xl md:text-3xl font-bold text-[#F5F5F5] mb-8 md:mb-10">
             What you bring to the table
           </h2>
 
@@ -440,11 +440,11 @@ export default function JoinForm() {
           SECTION 4 — Document Submission
          ──────────────────────────────────────────────── */}
       <FadeIn direction="up">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <p className="font-mono text-xs tracking-widest text-[#6B8AFD] uppercase mb-3">
             04 — Document Submission
           </p>
-          <h2 className="font-sans text-2xl md:text-3xl font-bold text-[#F5F5F5] mb-10">
+          <h2 className="font-sans text-xl md:text-3xl font-bold text-[#F5F5F5] mb-8 md:mb-10">
             Upload your resume
           </h2>
 
@@ -508,11 +508,11 @@ export default function JoinForm() {
           SECTION 5 — Closing
          ──────────────────────────────────────────────── */}
       <FadeIn direction="up">
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           <p className="font-mono text-xs tracking-widest text-[#6B8AFD] uppercase mb-3">
             05 — Closing
           </p>
-          <h2 className="font-sans text-2xl md:text-3xl font-bold text-[#F5F5F5] mb-10">
+          <h2 className="font-sans text-xl md:text-3xl font-bold text-[#F5F5F5] mb-8 md:mb-10">
             Anything else?
           </h2>
 

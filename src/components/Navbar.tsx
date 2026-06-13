@@ -216,18 +216,18 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-white/98 backdrop-blur-md pt-[150px] px-8 flex flex-col lg:hidden overflow-y-auto"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-[#050A30]/95 pt-[120px] px-6 flex flex-col lg:hidden overflow-y-auto"
           >
-            <div className="flex flex-col gap-2 mt-4">
+            <div className="flex flex-col gap-1 mt-4 pb-12">
               <Link
                 href="/"
-                className={`text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${pathname === "/"
-                  ? "text-primary border-primary/20"
-                  : "text-slate-800"
+                className={`text-left text-2xl font-heading font-bold tracking-wide py-4 border-b border-white/10 ${pathname === "/"
+                  ? "text-primary"
+                  : "text-white/80 hover:text-white"
                   }`}
               >
                 HOME
@@ -239,15 +239,15 @@ export default function Navbar() {
                     <>
                       <button
                         onClick={() => toggleMobileExpand(item.name)}
-                        className={`w-full flex items-center justify-between text-left text-5xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${isActive(item.href)
-                          ? "text-primary border-primary/20"
-                          : "text-slate-800"
+                        className={`w-full flex items-center justify-between text-left text-2xl font-heading font-bold tracking-wide py-4 border-b border-white/10 ${isActive(item.href)
+                          ? "text-primary"
+                          : "text-white/80 hover:text-white"
                           }`}
                       >
                         {item.name.toUpperCase()}
                         <ChevronDown
-                          className={`w-5 h-5 transition-transform ${mobileExpandedItem === item.name
-                            ? "rotate-180"
+                          className={`w-6 h-6 transition-transform ${mobileExpandedItem === item.name
+                            ? "rotate-180 text-primary"
                             : ""
                             }`}
                         />
@@ -259,11 +259,11 @@ export default function Navbar() {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="overflow-hidden pl-4"
+                            className="overflow-hidden bg-white/5 rounded-b-xl mb-2"
                           >
                             <Link
                               href={item.href}
-                              className="block py-2 text-sm font-mono text-primary uppercase tracking-widest border-b border-slate-50"
+                              className="block py-3 px-4 text-xs font-mono text-primary uppercase tracking-widest border-b border-white/10"
                             >
                               View All →
                             </Link>
@@ -271,9 +271,9 @@ export default function Navbar() {
                               <Link
                                 key={child.href}
                                 href={child.href}
-                                className={`block py-2.5 text-base font-heading tracking-wide border-b border-slate-50 ${isActive(child.href)
-                                  ? "text-primary font-semibold"
-                                  : "text-slate-600"
+                                className={`block py-3 px-4 text-base font-sans tracking-wide border-b border-white/5 last:border-0 ${isActive(child.href)
+                                  ? "text-primary font-semibold bg-white/10"
+                                  : "text-slate-300 hover:text-white hover:bg-white/5"
                                   }`}
                               >
                                 {child.name}
@@ -286,9 +286,9 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`block text-left text-2xl font-heading font-bold tracking-wide py-3 border-b border-slate-100 ${isActive(item.href)
-                        ? "text-primary border-primary/20"
-                        : "text-slate-800"
+                      className={`block text-left text-2xl font-heading font-bold tracking-wide py-4 border-b border-white/10 ${isActive(item.href)
+                        ? "text-primary"
+                        : "text-white/80 hover:text-white"
                         }`}
                     >
                       {item.name.toUpperCase()}
