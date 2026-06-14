@@ -21,7 +21,7 @@ export default function PageHero({
   labCode,
 }: PageHeroProps) {
   return (
-    <section className="relative min-h-[70vh] w-full flex items-end overflow-hidden bg-[#050A30] pt-32 md:pt-40 pb-16 md:pb-24">
+    <section className="relative min-h-[70vh] w-full flex items-end overflow-hidden bg-[#050A30] pt-28 sm:pt-32 md:pt-44 pb-12 sm:pb-16 md:pb-24">
       {/* Background Image */}
       {imageSrc && (
         <div className="absolute inset-0 z-0">
@@ -40,7 +40,7 @@ export default function PageHero({
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-1/4 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-primary/8 rounded-full blur-[100px] pointer-events-none z-[1]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full">
         {/* Back link */}
         {backLink && (
           <FadeIn direction="none" delay={0.1} className="mb-8">

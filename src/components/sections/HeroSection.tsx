@@ -7,7 +7,7 @@ import FadeIn from "../animations/FadeIn";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-20 md:pt-32">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050A30] pt-24 sm:pt-28 md:pt-36">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,12 +23,12 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-6 md:pt-8 flex flex-col justify-between h-[85vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full pt-4 md:pt-8 flex flex-col justify-between min-h-[80vh]">
         {/* Empty spacer to keep flex layout balanced */}
         <div />
 
         {/* Hero headline — oversized stacked */}
-        <div className="my-auto max-w-6xl">
+        <div className="my-auto w-full max-w-6xl">
           <h1 className="hero-headline text-white uppercase">
             <span className="block">HUMAN TORPOR</span>
             <span className="block">FOR THE</span>
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
           <FadeIn direction="up" delay={0.3} duration={1}>
             <p
-              className="text-slate-300 text-base md:text-lg lg:text-2xl font-light leading-relaxed max-w-4xl mt-6 md:mt-10"
+              className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-2xl font-light leading-relaxed max-w-4xl mt-4 sm:mt-6 md:mt-10"
             >
               Exploring synthetic torpor, metabolic suppression, and human
               hibernation technologies for future medicine and deep-space exploration.

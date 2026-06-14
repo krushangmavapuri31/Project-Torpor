@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { supabase } from "@/lib/supabase";
 import FadeIn from "@/components/animations/FadeIn";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const backgroundOptions = [
@@ -47,6 +48,10 @@ export default function JoinForm() {
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState("");
 
+  // "Other" field of study
+  const [otherField, setOtherField] = useState("");
+  const [otherFieldError, setOtherFieldError] = useState("");
+
   // Submit status
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -84,6 +89,11 @@ export default function JoinForm() {
       ? current.filter((b) => b !== option)
       : [...current, option];
     setValue("backgrounds", next, { shouldValidate: true });
+    // Clear the other-field when "Other" is deselected
+    if (option === "Other" && current.includes("Other")) {
+      setOtherField("");
+      setOtherFieldError("");
+    }
   };
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -113,6 +123,13 @@ export default function JoinForm() {
   const onSubmit = async (data: FormValues) => {
     setSubmitError("");
     setFileError("");
+    setOtherFieldError("");
+
+    // Validate "Other" field of study
+    if (data.backgrounds.includes("Other") && !otherField.trim()) {
+      setOtherFieldError("Please specify your field of study.");
+      return;
+    }
 
     if (!file) {
       setFileError("Resume is required.");
@@ -151,6 +168,7 @@ export default function JoinForm() {
             country: data.country,
             motivation: data.motivation,
             background: data.backgrounds,
+            other_background: data.backgrounds.includes("Other") ? otherField.trim() : null,
             time_commitment: data.weeklyTime,
             skill: data.skill || null,
             journal_review: data.comfortableReviewing || null,
@@ -306,25 +324,80 @@ export default function JoinForm() {
               </label>
               <div className="flex flex-col gap-3">
                 {backgroundOptions.map((option) => (
-                  <label
-                    key={option}
-                    onClick={() => toggleBackground(option)}
-                    className="group flex items-center gap-3 cursor-pointer py-1"
-                  >
-                    <div
-                      className={`w-4 h-4 rounded-sm border transition-all duration-300 flex items-center justify-center ${backgrounds.includes(option)
-                        ? "bg-[#6B8AFD] border-[#6B8AFD]"
-                        : "border-[#2A2A2A] group-hover:border-[#555]"
-                        }`}
+                  <div key={option}>
+                    <label
+                      onClick={() => toggleBackground(option)}
+                      className="group flex items-center gap-3 cursor-pointer py-1 select-none"
                     >
-                      {backgrounds.includes(option) && (
-                        <Check className="w-3 h-3 text-white" />
-                      )}
-                    </div>
-                    <span className="text-[#A1A1AA] font-sans text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">
-                      {option}
-                    </span>
-                  </label>
+                      <div
+                        className={`w-4 h-4 rounded-sm border transition-all duration-300 flex items-center justify-center flex-shrink-0 ${
+                          backgrounds.includes(option)
+                            ? "bg-[#6B8AFD] border-[#6B8AFD]"
+                            : "border-[#2A2A2A] group-hover:border-[#555]"
+                        }`}
+                      >
+                        {backgrounds.includes(option) && (
+                          <Check className="w-3 h-3 text-white" />
+                        )}
+                      </div>
+                      <span className="text-[#A1A1AA] font-sans text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">
+                        {option}
+                      </span>
+                    </label>
+
+                    {/* Animated "Other" text input — only for the "Other" option */}
+                    {option === "Other" && (
+                      <AnimatePresence initial={false}>
+                        {backgrounds.includes("Other") && (
+                          <motion.div
+                            key="other-input"
+                            initial={{ opacity: 0, height: 0, y: -6 }}
+                            animate={{ opacity: 1, height: "auto", y: 0 }}
+                            exit={{ opacity: 0, height: 0, y: -6 }}
+                            transition={{
+                              duration: 0.28,
+                              ease: [0.16, 1, 0.3, 1],
+                            }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-3 ml-7">
+                              <div className="relative">
+                                <input
+                                  type="text"
+                                  value={otherField}
+                                  onChange={(e) => {
+                                    setOtherField(e.target.value);
+                                    if (e.target.value.trim()) setOtherFieldError("");
+                                  }}
+                                  placeholder="Please specify your field of study"
+                                  autoFocus
+                                  className={`w-full bg-transparent border-b text-[#F5F5F5] font-sans text-sm py-2.5 px-0 placeholder:text-[#444] focus:outline-none transition-colors duration-300 ${
+                                    otherFieldError
+                                      ? "border-red-500/60 focus:border-red-400"
+                                      : "border-[#2A2A2A] focus:border-[#6B8AFD]"
+                                  }`}
+                                />
+                              </div>
+                              <AnimatePresence>
+                                {otherFieldError && (
+                                  <motion.p
+                                    key="other-error"
+                                    initial={{ opacity: 0, y: -4 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -4 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="text-red-400 font-mono text-xs mt-2"
+                                  >
+                                    {otherFieldError}
+                                  </motion.p>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
