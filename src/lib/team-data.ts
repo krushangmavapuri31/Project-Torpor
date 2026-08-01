@@ -56,38 +56,6 @@ export const teamMembers: TeamMember[] = [
   },
 
   {
-    name: "Karina Fuentes Chiu",
-    education: "Mechatronics Engineer | Robotics Educator | Mexico",
-    majorRole: "Seminar Scripter",
-    majorDescription:
-      "Writes educational seminar scripts, workshop material, and outreach presentations.",
-    specialRole: "Ethics & Consent Communicator",
-    specialDescription:
-      "Translates complex bioethical issues into accessible language for audiences.",
-    domain: "Bioethics & Regulatory Frameworks",
-    domainDescription:
-      "Informed consent and governance for experimental sedation in space.",
-    image: "/images/team/KARINA_FUENTES.png",
-    category: "communications",
-  },
-
-  {
-    name: "Kayla Maher",
-    education: "Strategic Communications | BA Speech Communication | Pennsylvania",
-    majorRole: "Public Relations Lead",
-    majorDescription:
-      "Manages press relations, stakeholder communications, crisis messaging, and project image.",
-    specialRole: "Regulatory Documentation Handler",
-    specialDescription:
-      "Drafts compliance documents, institutional contracts, and consent frameworks.",
-    domain: "Bioethics & Regulatory Frameworks",
-    domainDescription:
-      "Governance, risk thresholds, and public communication of torpor research.",
-    image: "/images/team/KAYLA.png",
-    category: "communications",
-  },
-
-  {
     name: "Lakshmi Vijayakumar Nair",
     education: "B.Sc Aviation Engineering | KTU | Lithuania",
     majorRole: "Media Handler",
