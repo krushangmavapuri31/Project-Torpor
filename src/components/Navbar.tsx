@@ -179,6 +179,7 @@ export default function Navbar() {
                     <ChevronDown
                       className={`w-3 h-3 transition-transform duration-300 ${openDropdown === item.name ? "rotate-180" : ""
                         }`}
+                      aria-hidden="true"
                     />
                   )}
                 </Link>
@@ -330,6 +331,7 @@ export default function Navbar() {
                             ? "text-primary"
                             : "text-white/80 hover:text-white"
                             }`}
+                          aria-expanded={mobileExpandedItem === item.name}
                         >
                           {item.name.toUpperCase()}
                           <ChevronDown
@@ -337,6 +339,7 @@ export default function Navbar() {
                               ? "rotate-180 text-primary"
                               : ""
                               }`}
+                            aria-hidden="true"
                           />
                         </button>
                         <AnimatePresence>

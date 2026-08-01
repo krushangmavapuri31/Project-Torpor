@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 export default function Footer() {
@@ -34,9 +32,9 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2 text-[10px] font-mono text-slate-400">
           <p>© {new Date().getFullYear()} PROJECT TORPOR. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-4">
-            <span className="hover:text-white cursor-pointer transition-colors">SYSTEM SCHEMA</span>
-            <span>/</span>
-            <span className="hover:text-white cursor-pointer transition-colors">SECURITY ACCESS</span>
+            <span className="hover:text-white cursor-pointer transition-colors" aria-label="System Schema" role="button" tabIndex={0}>SYSTEM SCHEMA</span>
+            <span aria-hidden="true">/</span>
+            <span className="hover:text-white cursor-pointer transition-colors" aria-label="Security Access" role="button" tabIndex={0}>SECURITY ACCESS</span>
           </div>
         </div>
       </div>

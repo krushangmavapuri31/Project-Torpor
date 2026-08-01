@@ -7,15 +7,18 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://project-torpor.com"),
   title: {
     default: "PROJECT TORPOR — Human Torpor for the Next Frontier",
     template: "%s — PROJECT TORPOR",

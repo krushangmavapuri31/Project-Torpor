@@ -1,5 +1,3 @@
-"use client";
-
 import FadeIn from "./animations/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
