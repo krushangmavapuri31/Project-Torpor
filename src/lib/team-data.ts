@@ -88,17 +88,17 @@ export const teamMembers: TeamMember[] = [
   },
 
   {
-    name: "Karina",
-    education: "Biomedical Researcher | Aerospace Consultant | Texas",
-    majorRole: "Senior Research Observer",
+    name: "Karina Fuentes Chiu",
+    education: "Mechatronics Engineer | Robotics Educator | Mexico",
+    majorRole: "Seminar Content Strategist",
     majorDescription:
-      "Oversees biological data integrity and monitors physiological responses throughout research trials.",
-    specialRole: "Seminar Scripter",
+      "Develops educational seminar scripts, workshop resources, and outreach materials to communicate complex scientific concepts effectively.",
+    specialRole: "Bioethics & Consent Communicator",
     specialDescription:
-      "Develops educational webinar content and science communication materials.",
-    domain: "Torpor Physiology & Metabolic Suppression",
+      "Bridges scientific research and public understanding by translating bioethical principles and informed consent requirements into accessible language.",
+    domain: "Bioethics & Regulatory Frameworks",
     domainDescription:
-      "Studies heart-rate reduction mechanisms, metabolic inhibition pathways, and physiological adaptation.",
+      "Contributes to ethical governance, informed consent protocols, and regulatory compliance for experimental torpor and long-duration spaceflight research.",
     image: "/images/team/KARINA.png",
     category: "research",
   },
