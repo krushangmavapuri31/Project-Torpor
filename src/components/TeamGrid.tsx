@@ -16,23 +16,31 @@ const FILTERS: { value: FilterOption; label: string }[] = [
   { value: "advisor", label: "Advisors" },
 ];
 
-export default function TeamGrid() {
+interface TeamGridProps {
+  members?: TeamMember[];
+}
+
+export default function TeamGrid({
+  members = teamMembers,
+}: TeamGridProps) {
   const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   const filtered = useMemo(() => {
-    if (activeFilter === "all") return teamMembers;
-    return teamMembers.filter((m) => m.category === activeFilter);
-  }, [activeFilter]);
+    if (activeFilter === "all") return members;
+    return members.filter((m) => m.category === activeFilter);
+  }, [activeFilter, members]);
 
   // Count per category for badges
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: teamMembers.length };
-    for (const m of teamMembers) {
+    const c: Record<string, number> = { all: members.length };
+    for (const m of members) {
       c[m.category] = (c[m.category] ?? 0) + 1;
     }
     return c;
-  }, []);
+  }, [members]);
+
+  console.log("Members passed to TeamGrid:", members.map(m => m.name));
 
   return (
     <>

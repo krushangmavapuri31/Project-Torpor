@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import FadeIn from "@/components/animations/FadeIn";
+import TeamGrid from "@/components/TeamGrid";
+import { neuroscienceMembers } from "@/lib/team-data";
 
 export const metadata: Metadata = {
   title: "Team Neuroscience for Torpor",
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 
 export default function NeuroscienceTorporPage() {
   return (
+
+
     <>
       <PageHero
         title="TEAM NEUROSCIENCE FOR TORPOR"
@@ -17,6 +21,7 @@ export default function NeuroscienceTorporPage() {
         imageSrc="/images/hero_bg.png"
         labCode="NEURO_DIV"
       />
+
 
       <section className="py-24 md:py-36 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -82,6 +87,9 @@ export default function NeuroscienceTorporPage() {
                 </p>
               </div>
             </FadeIn>
+          </div>
+          <div className="mt-20">
+            <TeamGrid members={neuroscienceMembers} />
           </div>
         </div>
       </section>
