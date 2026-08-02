@@ -49,9 +49,8 @@ export default async function WorkChildPage({
       {domain.sections.map((section, idx) => (
         <section
           key={section.heading}
-          className={`py-24 md:py-32 ${
-            idx % 2 === 0 ? "bg-[#050A30]" : "bg-[#080E38]"
-          }`}
+          className={`py-24 md:py-32 ${idx % 2 === 0 ? "bg-[#050A30]" : "bg-[#080E38]"
+            }`}
         >
           {/* Ambient glow */}
           <div className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
@@ -86,13 +85,13 @@ export default async function WorkChildPage({
               </span>
             </FadeIn>
             <FadeIn direction="up" delay={0.2}>
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(96,165,250,0.08)]">
+              <div className="relative max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(96,165,250,0.08)]">
                 <Image
-                  src="/Neural_Systems_Laboratory_image.png"
+                  src="/images/Neural_Systems_Laboratory_image.png"
                   alt="Neural Systems Laboratory — brain circuit mapping and torpor induction research facility"
-                  width={1400}
-                  height={800}
-                  className="w-full object-cover"
+                  width={1050}
+                  height={500}
+                  className="w-full h-auto object-contain"
                   priority={false}
                 />
                 {/* Gradient blend into next dark section */}
@@ -119,13 +118,13 @@ export default async function WorkChildPage({
             {domain.features.map((feat, i) => (
               <FadeIn key={feat.title} direction="up" delay={i * 0.05}>
                 <div className="group relative py-8 md:py-10 border-b border-white/10 cursor-default">
-                  
+
                   {/* Hover Accent Line expansion */}
                   <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-blue-500/60 group-hover:w-full transition-all duration-700 ease-out z-10" />
 
                   {/* Content Container with slight text shift */}
                   <div className="flex flex-col gap-2 md:gap-3 group-hover:translate-x-4 transition-transform duration-500 ease-out">
-                    
+
                     {/* Number & Title */}
                     <div className="flex items-center gap-4">
                       <span className="font-mono text-sm font-semibold text-slate-500 group-hover:text-blue-400 transition-colors duration-500">
@@ -136,7 +135,7 @@ export default async function WorkChildPage({
                         {feat.title}
                       </h3>
                     </div>
-                    
+
                     {/* Description */}
                     <p className="font-sans text-slate-400 font-normal text-sm md:text-base leading-relaxed max-w-3xl md:pl-[3.5rem]">
                       {feat.description}
