@@ -166,26 +166,12 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Multi-modal Biosignal Fusion & Telemetry",
     domainDescription:
       "EFS/Torpor biosignal fusion, depth-of-state EEG telemetry, and spaceflight-standards compliance.",
-    image: "/images/team/NEVIN.png",
+    image: "/images/team/PHILIP.png",
     category: "leadership",
   },
+
   {
-    name: "Rushikesh Latad",
-    education: "AI Program Associate & Mentor | IIT Gandhinagar | ML / Deep Learning / MLOps",
-    majorRole: "AI Model Lead — Synthetic Torpor Neural Classifier",
-    majorDescription:
-      "Designs and trains the core AI model that reads fused neural/biosignal streams and classifies depth-of-torpor state, distinguishing true metabolic suppression from sleep or sedation.",
-    specialRole: "MLOps & Deployment Engineer",
-    specialDescription:
-      "Builds the production pipeline around the model — experiment tracking, containerized deployment, and continuous monitoring — so the classifier is flight-reliable.",
-    domain: "Synthetic Torpor Neural Classifier AI",
-    domainDescription:
-      "ML/DL/NLP model pipelines using TensorFlow/PyTorch, MLflow, Docker, AWS SageMaker.",
-    image: "/images/team/DR. SHUBHAM.png",
-    category: "engineering",
-  },
-  {
-    name: "Preeya Negi",
+    name: "Preeya",
     education: "DST-INSPIRE JRF, Ph.D. (Tech.) Pharmaceutics | ICT Mumbai",
     majorRole: "Neuropharmacology & Induction-Agent Lead",
     majorDescription:
@@ -196,8 +182,24 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Receptor Pharmacology & Induction Formulation",
     domainDescription:
       "Neurodegenerative-drug cocrystal formulation, receptor pharmacology (oxytocin receptor, PARP-1, DMT), and drug delivery.",
-    image: "/images/team/LAKSHMI.png",
+    image: "/images/team/torpor.png",
     category: "research",
+  },
+  {
+    name: "Urvi Chaogi",
+    education: "Biomedical Engineering",
+    majorRole: "Neural & Wireless Biosensor Systems Engineer",
+    majorDescription:
+      "Designs wireless biosensor hardware, embedded telemetry systems, and low-power communication architectures for real-time physiological monitoring in synthetic torpor, ensuring reliable data acquisition in extreme aerospace environments.",
+    specialRole: "Embedded Telemetry & RF Systems Lead",
+    specialDescription:
+      "Develops energy-efficient embedded electronics, wireless communication modules, and biosignal acquisition systems for continuous monitoring of vital parameters during synthetic torpor experiments.",
+    domain: "Neural & Wireless Biosensor Systems",
+    domainDescription:
+      "Research focuses on Synthetic Torpor, Biomedical Electronics, Embedded Systems, Wireless Telemetry, RF Engineering, Biosignal Processing, and Aerospace Systems for next-generation physiological monitoring technologies.",
+    image: "/images/team/URVI.png",
+    category: "research",
+
   },
   {
     name: "Nainshi Mangal",
@@ -211,7 +213,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Model-Organism Biomarker Validation",
     domainDescription:
       "Hands-on husbandry, toxicology assays, and TLC-based pathway analysis in Drosophila and zebrafish model systems.",
-    image: "/images/team/NISHITA.png",
+    image: "/images/team/NAINSHI.png",
     category: "research",
   },
   {
@@ -226,7 +228,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Aerospace Medicine & Clinical Thresholds",
     domainDescription:
       "Clinical examination experience, physiology/anatomy distinctions, space medicine, and radiation physiology.",
-    image: "/images/team/KRUSHANG.png",
+    image: "/images/team/KESAV.png",
     category: "research",
   },
   {
@@ -241,7 +243,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Biomechanical Sensor Housings & Materials",
     domainDescription:
       "FEA/CAE validation, additive manufacturing of biomimetic hardware, and composite material mechanics.",
-    image: "/images/team/MANSI.png",
+    image: "/images/team/MUDRA.png",
     category: "engineering",
   },
   {
@@ -256,7 +258,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Aerospace Structural & Telemetry Integration",
     domainDescription:
       "Airframe structural analysis (HAL), UAV wing integration, and aerodynamic optimization.",
-    image: "/images/team/PRAYAG.png",
+    image: "/images/team/GIRI.png",
     category: "engineering",
   },
   {
@@ -271,7 +273,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "RAG Data Pipelines & Computer Vision",
     domainDescription:
       "Space-tech literature RAG pipelines, satellite image classification, and PID control-loop simulation.",
-    image: "/images/team/MANSI.png",
+    image: "/images/team/TANISHKA.png",
     category: "engineering",
   },
   {
@@ -286,24 +288,10 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Habitat Environmental Viability & Data QA",
     domainDescription:
       "Thermal and atmospheric habitat viability, ShakthiSAT satellite research, and NASA citizen science dataset classification.",
-    image: "/images/team/LAKSHMI.png",
+    image: "/images/team/GABRIELLA.png",
     category: "research",
   },
-  {
-    name: "Tapaswini Sharma",
-    education: "Graduate Student | Analog Astronaut | Teacher Liaison Officer",
-    majorRole: "Space Habitat & Crew Health Policy Lead",
-    majorDescription:
-      "Leads the crew-health and habitat-design policy layer — radiation shielding, gender- and disability-inclusive health considerations — that frames how torpor is deployed operationally.",
-    specialRole: "Outreach & Grant Proposal Coordinator",
-    specialDescription:
-      "Drafts grant proposals and manages outreach/education programming to build support and funding for the sub-team's work.",
-    domain: "Crew Health Policy & Habitat Design",
-    domainDescription:
-      "Sex/gender/disability health considerations in extreme environments, radiation-shielding, and Mars habitat healthcare.",
-    image: "/images/team/PROF.MANJUNATHA.png",
-    category: "communications",
-  },
+
   {
     name: "Triloki Varshney",
     education: "B.Sc. Astronomy & Astrophysics Hons. | Astronaut Candidate | NASA Citizen Scientist",
@@ -316,7 +304,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Mission Payload Planning & Science Communication",
     domainDescription:
       "NASA L'SPACE payload budget scoping, Lucy Mission ambassador outreach, and deep-space mission concept integration.",
-    image: "/images/team/NEVIN.png",
+    image: "/images/team/TRILOKI.png",
     category: "communications",
   }
 ];
