@@ -18,15 +18,19 @@ export default function Footer() {
         </div>
 
         {/* Center: Nav links */}
-        <div className="hidden lg:flex items-center gap-6 text-[10px] font-mono text-slate-400 uppercase tracking-[0.15em]">
-          <Link href="/about" className="hover:text-white transition-colors">About</Link>
-          <span>•</span>
-          <Link href="/synthetic-torpor" className="hover:text-white transition-colors">Synthetic Torpor</Link>
-          <span>•</span>
-          <Link href="/work" className="hover:text-white transition-colors">Our Work</Link>
-          <span>•</span>
-          <Link href="/team/astronaut-candidate" className="hover:text-white transition-colors">Team</Link>
+        <div className="flex flex-col gap-2">
+          <span className="text-s uppercase tracking-[0.2em] text-white/40">
+            Contact
+          </span>
+
+          <a
+            href="mailto:projecttorpor@gmail.com"
+            className="text-m text-white/70 transition-colors hover:text-white text-center"
+          >
+            projecttorpor@gmail.com
+          </a>
         </div>
+
 
         {/* Right: Copyright */}
         <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2 text-[10px] font-mono text-slate-400">

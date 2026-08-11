@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+import TorporIntro from "@/components/animations/TorporIntro";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,8 +46,11 @@ export default function RootLayout({
       className={`${inter.variable} ${syne.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#111111] font-sans">
+        <TorporIntro />
         <Navbar />
-        <main className="flex-1 w-full flex flex-col">{children}</main>
+        <main className="flex-1 w-full flex flex-col">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -169,9 +169,23 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/PHILIP.png",
     category: "leadership",
   },
-
   {
-    name: "Preeya",
+    name: "Rushikesh Latad",
+    education: "AI Program Associate & Mentor | IIT Gandhinagar | ML / Deep Learning / MLOps",
+    majorRole: "AI Model Lead — Synthetic Torpor Neural Classifier",
+    majorDescription:
+      "Designs and trains the core AI model that reads fused neural/biosignal streams and classifies depth-of-torpor state, distinguishing true metabolic suppression from sleep or sedation.",
+    specialRole: "MLOps & Deployment Engineer",
+    specialDescription:
+      "Builds the production pipeline around the model — experiment tracking, containerized deployment, and continuous monitoring — so the classifier is flight-reliable.",
+    domain: "Synthetic Torpor Neural Classifier AI",
+    domainDescription:
+      "ML/DL/NLP model pipelines using TensorFlow/PyTorch, MLflow, Docker, AWS SageMaker.",
+    image: "/images/team/DR. SHUBHAM.png",
+    category: "engineering",
+  },
+  {
+    name: "Preeya Negi",
     education: "DST-INSPIRE JRF, Ph.D. (Tech.) Pharmaceutics | ICT Mumbai",
     majorRole: "Neuropharmacology & Induction-Agent Lead",
     majorDescription:
@@ -291,7 +305,21 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/GABRIELLA.png",
     category: "research",
   },
-
+  {
+    name: "Tapaswini Sharma",
+    education: "Graduate Student | Analog Astronaut | Teacher Liaison Officer",
+    majorRole: "Space Habitat & Crew Health Policy Lead",
+    majorDescription:
+      "Leads the crew-health and habitat-design policy layer — radiation shielding, gender- and disability-inclusive health considerations — that frames how torpor is deployed operationally.",
+    specialRole: "Outreach & Grant Proposal Coordinator",
+    specialDescription:
+      "Drafts grant proposals and manages outreach/education programming to build support and funding for the sub-team's work.",
+    domain: "Crew Health Policy & Habitat Design",
+    domainDescription:
+      "Sex/gender/disability health considerations in extreme environments, radiation-shielding, and Mars habitat healthcare.",
+    image: "/images/team/PROF.MANJUNATHA.png",
+    category: "communications",
+  },
   {
     name: "Triloki Varshney",
     education: "B.Sc. Astronomy & Astrophysics Hons. | Astronaut Candidate | NASA Citizen Scientist",
@@ -304,7 +332,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Mission Payload Planning & Science Communication",
     domainDescription:
       "NASA L'SPACE payload budget scoping, Lucy Mission ambassador outreach, and deep-space mission concept integration.",
-    image: "/images/team/TRILOKI.png",
+    image: "/images/team/NEVIN.png",
     category: "communications",
   }
 ];
