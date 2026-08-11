@@ -170,21 +170,6 @@ export const neuroscienceMembers: TeamMember[] = [
     category: "leadership",
   },
   {
-    name: "Rushikesh Latad",
-    education: "AI Program Associate & Mentor | IIT Gandhinagar | ML / Deep Learning / MLOps",
-    majorRole: "AI Model Lead — Synthetic Torpor Neural Classifier",
-    majorDescription:
-      "Designs and trains the core AI model that reads fused neural/biosignal streams and classifies depth-of-torpor state, distinguishing true metabolic suppression from sleep or sedation.",
-    specialRole: "MLOps & Deployment Engineer",
-    specialDescription:
-      "Builds the production pipeline around the model — experiment tracking, containerized deployment, and continuous monitoring — so the classifier is flight-reliable.",
-    domain: "Synthetic Torpor Neural Classifier AI",
-    domainDescription:
-      "ML/DL/NLP model pipelines using TensorFlow/PyTorch, MLflow, Docker, AWS SageMaker.",
-    image: "/images/team/DR. SHUBHAM.png",
-    category: "engineering",
-  },
-  {
     name: "Preeya Negi",
     education: "DST-INSPIRE JRF, Ph.D. (Tech.) Pharmaceutics | ICT Mumbai",
     majorRole: "Neuropharmacology & Induction-Agent Lead",
@@ -289,34 +274,32 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/LAKSHMI.png",
     category: "research",
   },
+
+
+];
+
+export const astronautCandidates: TeamMember[] = [
   {
-    name: "Tapaswini Sharma",
-    education: "Graduate Student | Analog Astronaut | Teacher Liaison Officer",
-    majorRole: "Space Habitat & Crew Health Policy Lead",
+    name: "Antriksh",
+    education: "Nirma University",
+    image: "/images/Astronaut.png",
+
+    majorRole: "Director of Reserves",
+
     majorDescription:
-      "Leads the crew-health and habitat-design policy layer — radiation shielding, gender- and disability-inclusive health considerations — that frames how torpor is deployed operationally.",
-    specialRole: "Outreach & Grant Proposal Coordinator",
+      "Leads the scientific vision, research strategy, and technological development of synthetic torpor systems for future human spaceflight. Responsible for coordinating interdisciplinary research, defining long-term objectives, and translating innovative concepts into practical solutions for deep-space exploration.",
+
+    specialRole: "Targeted Temperature Management (TTM) Lead",
+
     specialDescription:
-      "Drafts grant proposals and manages outreach/education programming to build support and funding for the sub-team's work.",
-    domain: "Crew Health Policy & Habitat Design",
+      "Develops the Targeted Temperature Management (TTM) methodology, oversees research across multiple technical divisions, designs experimental frameworks, supervises scientific publications, and integrates neuroscience, biomedical engineering, and aerospace sciences into a unified synthetic torpor platform.",
+
+    domain:
+      "Synthetic Torpor & Targeted Temperature Management",
+
     domainDescription:
-      "Sex/gender/disability health considerations in extreme environments, radiation-shielding, and Mars habitat healthcare.",
-    image: "/images/team/PROF.MANJUNATHA.png",
-    category: "communications",
+      "Research interests include Synthetic Torpor, Targeted Temperature Management (TTM), Neuroscience, Hypometabolism, Metabolic Engineering, Thermoregulation, Cryobiology, Space Medicine, Aerospace Physiology, Human Factors Engineering, Biomedical Systems, and Long-Duration Deep Space Mission Technologies.",
+
+    category: "leadership",
   },
-  {
-    name: "Triloki Varshney",
-    education: "B.Sc. Astronomy & Astrophysics Hons. | Astronaut Candidate | NASA Citizen Scientist",
-    majorRole: "Science Communication & Mission Liaison",
-    majorDescription:
-      "Translates the sub-team's neural-torpor research for public and institutional audiences, and liaises with mission-concept programs on how the work fits broader lunar/Mars payload planning.",
-    specialRole: "Payload Requirements Support",
-    specialDescription:
-      "Applies his NASA L'SPACE payload-requirements experience to help scope how torpor-monitoring hardware would sit within a mission payload budget.",
-    domain: "Mission Payload Planning & Science Communication",
-    domainDescription:
-      "NASA L'SPACE payload budget scoping, Lucy Mission ambassador outreach, and deep-space mission concept integration.",
-    image: "/images/team/NEVIN.png",
-    category: "communications",
-  }
 ];

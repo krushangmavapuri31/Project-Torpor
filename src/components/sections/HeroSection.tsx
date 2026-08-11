@@ -37,6 +37,53 @@ export default function HeroSection() {
             </span>
           </h1>
 
+          <a
+            href="https://www.instagram.com/project.torpor/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-8 inline-flex items-center gap-3 text-white/80 transition-all duration-300 hover:text-white"
+          >
+            {/* Instagram icon */}
+            <span className="flex h-15 w-15 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:bg-white/20">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                className="h-8 w-8"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+
+            {/* Text */}
+            <span className="flex flex-col">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-white/50">
+                Follow the mission
+              </span>
+
+              <span className="text-sm font-medium tracking-wide">
+                @project.torpor
+              </span>
+            </span>
+
+
+          </a>
+
           <FadeIn direction="up" delay={0.3} duration={1}>
             <p
               className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-2xl font-light leading-relaxed max-w-4xl mt-4 sm:mt-6 md:mt-10"
@@ -57,6 +104,7 @@ export default function HeroSection() {
             </span>
             {/* <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" /> */}
           </FadeIn>
+
 
           <motion.div
             animate={{ y: [0, 6, 0] }}

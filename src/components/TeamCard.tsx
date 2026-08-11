@@ -48,7 +48,10 @@ export default function TeamCard({ member, index, onClick }: TeamCardProps) {
             alt={member.name}
             width={400}
             height={400}
-            className="team-card-img"
+            className={`team-card-img ${member.majorRole === "Astronaut Candidate"
+              ? "team-card-img--astronaut"
+              : ""
+              }`}
           />
         </div>
 
