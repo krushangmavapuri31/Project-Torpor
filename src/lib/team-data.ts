@@ -169,21 +169,7 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/PHILIP.png",
     category: "leadership",
   },
-  {
-    name: "Rushikesh Latad",
-    education: "AI Program Associate & Mentor | IIT Gandhinagar | ML / Deep Learning / MLOps",
-    majorRole: "AI Model Lead — Synthetic Torpor Neural Classifier",
-    majorDescription:
-      "Designs and trains the core AI model that reads fused neural/biosignal streams and classifies depth-of-torpor state, distinguishing true metabolic suppression from sleep or sedation.",
-    specialRole: "MLOps & Deployment Engineer",
-    specialDescription:
-      "Builds the production pipeline around the model — experiment tracking, containerized deployment, and continuous monitoring — so the classifier is flight-reliable.",
-    domain: "Synthetic Torpor Neural Classifier AI",
-    domainDescription:
-      "ML/DL/NLP model pipelines using TensorFlow/PyTorch, MLflow, Docker, AWS SageMaker.",
-    image: "/images/team/DR. SHUBHAM.png",
-    category: "engineering",
-  },
+
   {
     name: "Preeya Negi",
     education: "DST-INSPIRE JRF, Ph.D. (Tech.) Pharmaceutics | ICT Mumbai",
@@ -199,22 +185,7 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/torpor.png",
     category: "research",
   },
-  {
-    name: "Urvi Chaogi",
-    education: "Biomedical Engineering",
-    majorRole: "Neural & Wireless Biosensor Systems Engineer",
-    majorDescription:
-      "Designs wireless biosensor hardware, embedded telemetry systems, and low-power communication architectures for real-time physiological monitoring in synthetic torpor, ensuring reliable data acquisition in extreme aerospace environments.",
-    specialRole: "Embedded Telemetry & RF Systems Lead",
-    specialDescription:
-      "Develops energy-efficient embedded electronics, wireless communication modules, and biosignal acquisition systems for continuous monitoring of vital parameters during synthetic torpor experiments.",
-    domain: "Neural & Wireless Biosensor Systems",
-    domainDescription:
-      "Research focuses on Synthetic Torpor, Biomedical Electronics, Embedded Systems, Wireless Telemetry, RF Engineering, Biosignal Processing, and Aerospace Systems for next-generation physiological monitoring technologies.",
-    image: "/images/team/URVI.png",
-    category: "research",
 
-  },
   {
     name: "Nainshi Mangal",
     education: "B.Sc. (Hons.) Biochemistry | Daulat Ram College, University of Delhi",
@@ -320,19 +291,23 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/PROF.MANJUNATHA.png",
     category: "communications",
   },
+
+];
+
+export const astronautCandidates: TeamMember[] = [
   {
-    name: "Triloki Varshney",
-    education: "B.Sc. Astronomy & Astrophysics Hons. | Astronaut Candidate | NASA Citizen Scientist",
-    majorRole: "Science Communication & Mission Liaison",
+    name: "Antriksh Gujarati",
+    education: "Nirma University",
+    image: "/images/Astronaut.png",
+    majorRole: "Director of Reserves",
     majorDescription:
-      "Translates the sub-team's neural-torpor research for public and institutional audiences, and liaises with mission-concept programs on how the work fits broader lunar/Mars payload planning.",
-    specialRole: "Payload Requirements Support",
+      "Leading the scientific vision, research strategy, and technological development of synthetic torpor systems for future human spaceflight. Responsible for coordinating interdisciplinary research, defining long-term objectives, and translating innovative concepts into practical solutions for deep-space exploration.",
+    specialRole: "Targeted Temperature Management (TTM) Lead",
     specialDescription:
-      "Applies his NASA L'SPACE payload-requirements experience to help scope how torpor-monitoring hardware would sit within a mission payload budget.",
-    domain: "Mission Payload Planning & Science Communication",
+      "Developing the Targeted Temperature Management (TTM) methodology, overseeing research across multiple technical divisions, designing experimental frameworks, supervising scientific publications, and integrating neuroscience, biomedical engineering, and aerospace sciences into a unified synthetic torpor platform.",
+    domain: "Synthetic Torpor & Targeted Temperature Management",
     domainDescription:
-      "NASA L'SPACE payload budget scoping, Lucy Mission ambassador outreach, and deep-space mission concept integration.",
-    image: "/images/team/NEVIN.png",
-    category: "communications",
-  }
+      "Synthetic Torpor, Targeted Temperature Management (TTM), Neuroscience, Hypometabolism, Metabolic Engineering, Thermoregulation, Cryobiology, Space Medicine, Aerospace Physiology, Human Factors Engineering, Biomedical Systems, Long-Duration Deep Space Mission Technologies.",
+    category: "leadership",
+  },
 ];
