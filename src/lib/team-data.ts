@@ -276,21 +276,7 @@ export const neuroscienceMembers: TeamMember[] = [
     image: "/images/team/GABRIELLA.png",
     category: "research",
   },
-  {
-    name: "Tapaswini Sharma",
-    education: "Graduate Student | Analog Astronaut | Teacher Liaison Officer",
-    majorRole: "Space Habitat & Crew Health Policy Lead",
-    majorDescription:
-      "Leads the crew-health and habitat-design policy layer — radiation shielding, gender- and disability-inclusive health considerations — that frames how torpor is deployed operationally.",
-    specialRole: "Outreach & Grant Proposal Coordinator",
-    specialDescription:
-      "Drafts grant proposals and manages outreach/education programming to build support and funding for the sub-team's work.",
-    domain: "Crew Health Policy & Habitat Design",
-    domainDescription:
-      "Sex/gender/disability health considerations in extreme environments, radiation-shielding, and Mars habitat healthcare.",
-    image: "/images/team/PROF.MANJUNATHA.png",
-    category: "communications",
-  },
+
 
 ];
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import AstronautCandidateDossier from "@/components/AstronautCandidateDossier";
-import { astronautCandidates } from "@/lib/team-data";
+import CandidateProfile from "./CandidateProfile";
 
 export const metadata: Metadata = {
   title: "Astronaut Candidate Profile – Project Torpor",
@@ -9,15 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AstronautCandidatePage() {
-  const candidate = astronautCandidates[0];
-
-  if (!candidate) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <p>Astronaut candidate information is currently unavailable.</p>
-      </main>
-    );
-  }
-
-  return <AstronautCandidateDossier candidate={candidate} />;
+  return <CandidateProfile />;
 }

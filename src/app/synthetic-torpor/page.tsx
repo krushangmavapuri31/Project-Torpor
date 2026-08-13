@@ -16,7 +16,7 @@ export default function SyntheticTorporPage() {
       <PageHero
         title="SYNTHETIC TORPOR"
         subtitle="Safely suppressing human metabolism to biological minimums through targeted hypothalamic intervention."
-        imageSrc="/images/synthetic_torpor.png"
+        imageSrc="/images/Synthetic_torpor.png"
       />
 
       {/* What Is Synthetic Torpor */}
