@@ -173,7 +173,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Multi-modal Biosignal Fusion & Telemetry",
     domainDescription:
       "EFS/Torpor biosignal fusion, depth-of-state EEG telemetry, and spaceflight-standards compliance.",
-    image: "/images/team/NEVIN.png",
+    image: "/images/team/PHILIP.png",
     category: "leadership",
   },
   {
@@ -188,9 +188,10 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Receptor Pharmacology & Induction Formulation",
     domainDescription:
       "Neurodegenerative-drug cocrystal formulation, receptor pharmacology (oxytocin receptor, PARP-1, DMT), and drug delivery.",
-    image: "/images/team/LAKSHMI.png",
+    image: "/images/team/torpor.png",
     category: "research",
   },
+
   {
     name: "Nainshi Mangal",
     education: "B.Sc. (Hons.) Biochemistry | Daulat Ram College, University of Delhi",
@@ -203,7 +204,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Model-Organism Biomarker Validation",
     domainDescription:
       "Hands-on husbandry, toxicology assays, and TLC-based pathway analysis in Drosophila and zebrafish model systems.",
-    image: "/images/team/NISHITA.png",
+    image: "/images/team/NAINSHI.png",
     category: "research",
   },
   {
@@ -218,7 +219,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Aerospace Medicine & Clinical Thresholds",
     domainDescription:
       "Clinical examination experience, physiology/anatomy distinctions, space medicine, and radiation physiology.",
-    image: "/images/team/KRUSHANG.png",
+    image: "/images/team/KESAV.png",
     category: "research",
   },
   {
@@ -233,7 +234,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Biomechanical Sensor Housings & Materials",
     domainDescription:
       "FEA/CAE validation, additive manufacturing of biomimetic hardware, and composite material mechanics.",
-    image: "/images/team/MANSI.png",
+    image: "/images/team/MUDRA.png",
     category: "engineering",
   },
   {
@@ -248,7 +249,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Aerospace Structural & Telemetry Integration",
     domainDescription:
       "Airframe structural analysis (HAL), UAV wing integration, and aerodynamic optimization.",
-    image: "/images/team/PRAYAG.png",
+    image: "/images/team/GIRI.png",
     category: "engineering",
   },
   {
@@ -263,7 +264,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "RAG Data Pipelines & Computer Vision",
     domainDescription:
       "Space-tech literature RAG pipelines, satellite image classification, and PID control-loop simulation.",
-    image: "/images/team/MANSI.png",
+    image: "/images/team/TANISHKA.png",
     category: "engineering",
   },
   {
@@ -278,7 +279,7 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Habitat Environmental Viability & Data QA",
     domainDescription:
       "Thermal and atmospheric habitat viability, ShakthiSAT satellite research, and NASA citizen science dataset classification.",
-    image: "/images/team/LAKSHMI.png",
+    image: "/images/team/GABRIELLA.png",
     category: "research",
   },
 
@@ -399,7 +400,7 @@ export const hypoMetabolismMembers: TeamMember[] = [
     domain: "Telemetry Systems & Cardiovascular Hemodynamics",
     domainDescription:
       "Remote telemetry systems, satellite communication protocols, bio-fluid flow dynamics, and human safety workflows.",
-    image: "/images/team/MERLIN_ANABELLE",
+    image: "/images/team/MERLIN_ANABELLE.png",
     category: "safety-telemetry",
   },
   {
