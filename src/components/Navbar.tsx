@@ -28,6 +28,7 @@ const navItems = [
       { name: "Astronaut Candidate", href: "/team/astronaut-candidate" },
       { name: "TTM Members", href: "/team/ttm-members" },
       { name: "Team Neuroscience for Torpor", href: "/team/neuroscience-torpor" },
+      { name: "Hypo Metabolism", href: "/team/hypo-metabolism" },
     ],
   },
   { name: "Join Torpor", href: "/join" },
