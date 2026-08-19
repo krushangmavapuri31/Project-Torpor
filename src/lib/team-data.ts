@@ -7,7 +7,14 @@ export type TeamCategory =
   | "research"
   | "engineering"
   | "communications"
-  | "advisor";
+  | "advisor"
+  | "computational-modeling"
+  | "pharmacology"
+  | "bioethics-biology"
+  | "hardware-engineering"
+  | "metabolic-biology"
+  | "safety-telemetry"
+  | "systems-physiology";
 
 export interface TeamMember {
   name: string;
@@ -166,152 +173,6 @@ export const neuroscienceMembers: TeamMember[] = [
     domain: "Multi-modal Biosignal Fusion & Telemetry",
     domainDescription:
       "EFS/Torpor biosignal fusion, depth-of-state EEG telemetry, and spaceflight-standards compliance.",
-    image: "/images/team/PHILIP.png",
-    category: "leadership",
-  },
-
-  {
-    name: "Preeya Negi",
-    education: "DST-INSPIRE JRF, Ph.D. (Tech.) Pharmaceutics | ICT Mumbai",
-    majorRole: "Neuropharmacology & Induction-Agent Lead",
-    majorDescription:
-      "Leads the pharmacological side of synthetic torpor induction — receptor-level mechanisms, cocrystal/formulation strategy, and dosing safety envelopes that the neural monitoring system will need to track against.",
-    specialRole: "Publications & Literature Review Coordinator",
-    specialDescription:
-      "Coordinates manuscript development and keeps the team's induction-agent claims grounded in peer-reviewed literature.",
-    domain: "Receptor Pharmacology & Induction Formulation",
-    domainDescription:
-      "Neurodegenerative-drug cocrystal formulation, receptor pharmacology (oxytocin receptor, PARP-1, DMT), and drug delivery.",
-    image: "/images/team/torpor.png",
-    category: "research",
-  },
-
-  {
-    name: "Nainshi Mangal",
-    education: "B.Sc. (Hons.) Biochemistry | Daulat Ram College, University of Delhi",
-    majorRole: "Model-Organism Biomarker Research Associate",
-    majorDescription:
-      "Runs Drosophila/zebrafish assays to validate candidate torpor-inducing compounds and stress/recovery biomarkers before they reach the human-relevant physiology track.",
-    specialRole: "Laboratory Techniques Lead",
-    specialDescription:
-      "Owns the wet-lab methods bench — chromatography, spectroscopy, gel electrophoresis — supporting biomarker verification for both pharmacology and physiology sub-tracks.",
-    domain: "Model-Organism Biomarker Validation",
-    domainDescription:
-      "Hands-on husbandry, toxicology assays, and TLC-based pathway analysis in Drosophila and zebrafish model systems.",
-    image: "/images/team/NAINSHI.png",
-    category: "research",
-  },
-  {
-    name: "Kesav",
-    education: "MBBS Final Year | Aerospace Medicine & Human Physiology",
-    majorRole: "Human Physiology & Clinical Liaison",
-    majorDescription:
-      "Brings the clinical-medicine lens to torpor protocol design — sanity-checking neural/physiological thresholds against real patient-examination experience and human adaptation to spaceflight stressors.",
-    specialRole: "Medical Documentation & Conference Coordinator",
-    specialDescription:
-      "Prepares clinical-facing documentation of the protocol and represents the team at academic/medical seminars and conferences.",
-    domain: "Aerospace Medicine & Clinical Thresholds",
-    domainDescription:
-      "Clinical examination experience, physiology/anatomy distinctions, space medicine, and radiation physiology.",
-    image: "/images/team/KESAV.png",
-    category: "research",
-  },
-  {
-    name: "Mudra Patil",
-    education: "B.Tech Mechanical Engineering | VIIT Pune | FEA/CAE & Analog Missions",
-    majorRole: "Biomechanical Instrumentation Engineer",
-    majorDescription:
-      "Applies FEA/CAE and additive-manufacturing experience to design physical housings and wearable mounts for neural/biosignal sensors, building on her biomimetic-splint work.",
-    specialRole: "Materials & Additive Manufacturing Lead",
-    specialDescription:
-      "Owns material selection and thermal/fatigue validation (drawing on PLA recyclability research) for 3D-printed sensor enclosures used in torpor-monitoring hardware.",
-    domain: "Biomechanical Sensor Housings & Materials",
-    domainDescription:
-      "FEA/CAE validation, additive manufacturing of biomimetic hardware, and composite material mechanics.",
-    image: "/images/team/MUDRA.png",
-    category: "engineering",
-  },
-  {
-    name: "Giri Patil",
-    education: "B.E. Mechanical Engineering, Honors in Aerospace | K.J. Somaiya",
-    majorRole: "Aerospace Structural Integration Engineer",
-    majorDescription:
-      "Integrates neural-telemetry hardware into the broader airframe/habitat structural envelope, ensuring sensor mounts and wiring runs meet stiffness/strength requirements.",
-    specialRole: "Aerodynamics & Environmental Stress Analyst",
-    specialDescription:
-      "Uses XFLR5/hand-calculation experience to assess how flight loads and environmental stress affect telemetry housing integrity.",
-    domain: "Aerospace Structural & Telemetry Integration",
-    domainDescription:
-      "Airframe structural analysis (HAL), UAV wing integration, and aerodynamic optimization.",
-    image: "/images/team/GIRI.png",
-    category: "engineering",
-  },
-  {
-    name: "Tanishka Anwekar",
-    education: "B.Tech Computer Science & Engineering | DBATU | CV, RAG & Data Pipelines",
-    majorRole: "Data Pipeline & Literature-Ingestion Engineer",
-    majorDescription:
-      "Builds the RAG-based ingestion pipeline that keeps the team current on torpor/neuroscience literature and structures raw sensor datasets for downstream model use.",
-    specialRole: "Computer Vision Support Engineer",
-    specialDescription:
-      "Assists the AI track with image/signal-classification components, reusing her satellite-image classifier experience for camera-based passive monitoring.",
-    domain: "RAG Data Pipelines & Computer Vision",
-    domainDescription:
-      "Space-tech literature RAG pipelines, satellite image classification, and PID control-loop simulation.",
-    image: "/images/team/TANISHKA.png",
-    category: "engineering",
-  },
-  {
-    name: "Gabriella Pimenta Costa Martins",
-    education: "Civil & Environmental Engineering Student | UNIVALE, Brazil",
-    majorRole: "Environmental & Habitat Integration Researcher",
-    majorDescription:
-      "Studies how habitat environmental conditions (thermal, atmospheric) interact with induced-torpor viability, connecting neural monitoring work to life-support system design.",
-    specialRole: "NASA Citizen-Science Data Liaison",
-    specialDescription:
-      "Applies her NASA citizen-science data-classification background to help structure and QA incoming observational/telemetry datasets.",
-    domain: "Habitat Environmental Viability & Data QA",
-    domainDescription:
-      "Thermal and atmospheric habitat viability, ShakthiSAT satellite research, and NASA citizen science dataset classification.",
-    image: "/images/team/GABRIELLA.png",
-    category: "research",
-  },
-
-
-];
-
-export const astronautCandidates: TeamMember[] = [
-  {
-    name: "Antriksh Gujarati",
-    education: "Nirma University",
-    image: "/images/Astronaut.png",
-    majorRole: "Director of Reserves",
-    majorDescription:
-      "Leading the scientific vision, research strategy, and technological development of synthetic torpor systems for future human spaceflight. Responsible for coordinating interdisciplinary research, defining long-term objectives, and translating innovative concepts into practical solutions for deep-space exploration.",
-    specialRole: "Targeted Temperature Management (TTM) Lead",
-    specialDescription:
-      "Developing the Targeted Temperature Management (TTM) methodology, overseeing research across multiple technical divisions, designing experimental frameworks, supervising scientific publications, and integrating neuroscience, biomedical engineering, and aerospace sciences into a unified synthetic torpor platform.",
-    domain: "Synthetic Torpor & Targeted Temperature Management",
-    domainDescription:
-      "Synthetic Torpor, Targeted Temperature Management (TTM), Neuroscience, Hypometabolism, Metabolic Engineering, Thermoregulation, Cryobiology, Space Medicine, Aerospace Physiology, Human Factors Engineering, Biomedical Systems, Long-Duration Deep Space Mission Technologies.",
-    category: "leadership",
-  },
-];
-
-export const hypoMetabolismMembers: TeamMember[] = [
-
-  {
-    name: "Phillip “Fury” Wainwright",
-    education: "Founder & Principal Engineer, Human Inertia Inc. | Torpor Neuroscience Instrumentation",
-    majorRole: "Neural Telemetry Systems Lead",
-    majorDescription:
-      "Owns the overall architecture for multi-modal biosignal fusion (EEG, fascial impedance, HRV, respiration, passive cognitive load) and the unified crew Resonance Score that will sit at the core of the sub-team's neural monitoring stack.",
-    specialRole: "Standards & Evidence-Tiering Officer",
-    specialDescription:
-      "Maintains the evidence-tiered posture (Deployed / Built / Complete / Planned) across every subsystem and owns spaceflight-standards mapping (NASA-STD-3001, ISO 13485, IEC 60601-1) so claims stay defensible.",
-    domain: "Multi-modal Biosignal Fusion & Telemetry",
-    domainDescription:
-      "EFS/Torpor biosignal fusion, depth-of-state EEG telemetry, and spaceflight-standards compliance.",
     image: "/images/team/NEVIN.png",
     category: "leadership",
   },
@@ -420,5 +281,141 @@ export const hypoMetabolismMembers: TeamMember[] = [
     image: "/images/team/LAKSHMI.png",
     category: "research",
   },
+
+
+];
+
+export const astronautCandidates: TeamMember[] = [
+  {
+    name: "Antriksh",
+    education: "Nirma University",
+    image: "/images/Astronaut.png",
+
+    majorRole: "Director of Reserves",
+
+    majorDescription:
+      "Leads the scientific vision, research strategy, and technological development of synthetic torpor systems for future human spaceflight. Responsible for coordinating interdisciplinary research, defining long-term objectives, and translating innovative concepts into practical solutions for deep-space exploration.",
+
+    specialRole: "Targeted Temperature Management (TTM) Lead",
+
+    specialDescription:
+      "Develops the Targeted Temperature Management (TTM) methodology, oversees research across multiple technical divisions, designs experimental frameworks, supervises scientific publications, and integrates neuroscience, biomedical engineering, and aerospace sciences into a unified synthetic torpor platform.",
+
+    domain:
+      "Synthetic Torpor & Targeted Temperature Management",
+
+    domainDescription:
+      "Research interests include Synthetic Torpor, Targeted Temperature Management (TTM), Neuroscience, Hypometabolism, Metabolic Engineering, Thermoregulation, Cryobiology, Space Medicine, Aerospace Physiology, Human Factors Engineering, Biomedical Systems, and Long-Duration Deep Space Mission Technologies.",
+
+    category: "leadership",
+  },
+];
+
+export const hypoMetabolismMembers: TeamMember[] = [
+  {
+    name: "Srija Peddakapu",
+    education: "Bachelor of Computer Applications | KL Deemed to be University",
+    majorRole: "Biometric Data Modeler",
+    majorDescription:
+      "Builds high-speed computational models for real-time biometric telemetry, applying neural network computational modeling to monitor and protect brain pathways during suppressed metabolic states.",
+    specialRole: "Neuro-Metabolic Specialist",
+    specialDescription:
+      "Leverages high-performance C++ computing, neural networks, PyTorch, and TensorFlow to model metabolic suppression and neurological stability.",
+    domain: "Biometric Telemetry & Neural Network Modeling",
+    domainDescription:
+      "Neural networks, parallel CPU programming in C++, PyTorch, TensorFlow, and real-time computational monitoring.",
+    image: "/images/team/SRIJA.png",
+    category: "computational-modeling",
+  },
+  {
+    name: "Krisha Gujarati",
+    education: "Doctor of Pharmacy (PharmD) | Maliba Pharmacy College, Uka Tarsadia University",
+    majorRole: "Torpor Pharmacologist",
+    majorDescription:
+      "Formulates torpor-inducing drug cocktails and analyzes clinical pharmacological agents required for safe metabolic suppression.",
+    specialRole: "Renal & Hepatic Biologist",
+    specialDescription:
+      "Studies how the liver and kidneys clear metabolic byproducts and pharmacological compounds during induced states of torpor.",
+    domain: "Torpor Pharmacology & Metabolic Clearance",
+    domainDescription:
+      "Clinical pharmacy training, pharmaceutical formulation, pharmacokinetic modeling, and renal/hepatic clearance.",
+    image: "/images/team/KRISHA.png",
+    category: "pharmacology",
+  },
+  {
+    name: "Tapaswini Sharma",
+    education: "BSc IT (Graduate Student) | Blue Marble Space Institute of Science / Space Court Foundation",
+    majorRole: "Clinical Bioethicist",
+    majorDescription:
+      "Authors human research bioethics frameworks, space law/policy guidelines, and regulatory compliance protocols for deep-space physiological experimentation.",
+    specialRole: "Cellular Biologist",
+    specialDescription:
+      "Leads research on cellular-level adaptations to extreme metabolic stress, drawing from extremophile survival mechanisms and hibernation concepts (Hiber-Bot).",
+    domain: "Space Bioethics & Extremophile Cellular Biology",
+    domainDescription:
+      "Extremophile biological modeling, space habitat design, astrobiology adaptation, and space law/policy advocacy.",
+    image: "/images/team/TAPASWINI.png",
+    category: "bioethics-biology",
+  },
+  {
+    name: "Parvesh Chandrasekar",
+    education: "BSc Mechatronics | Kaunas University of Technology (KTU)",
+    majorRole: "Stasis Hardware Engineer",
+    majorDescription:
+      "Manages the physical mechanical engineering, structural housing, and embedded sensor architecture of the stasis apparatus.",
+    specialRole: "Thermal Regulation Bioengineer",
+    specialDescription:
+      "Designs and implements precise thermodynamic micro-controls and localized heating/cooling loops for targeted organ protection.",
+    domain: "Stasis Hardware & Thermodynamic Systems",
+    domainDescription:
+      "Robotics, embedded hardware (ESP32/Arduino), CAD design (SolidWorks), thermal sensors, and system instrumentation.",
+    image: "/images/team/PARVESH.png",
+    category: "hardware-engineering",
+  },
+  {
+    name: "Jatin Agrawal",
+    education: "Bachelor of Pharmacy | BSA College of Engineering & Technology (AKTU)",
+    majorRole: "Systemic Metabolic Biologist",
+    majorDescription:
+      "Oversees total biological energy balance, nutrient utilization, and systemic homeostasis under prolonged metabolic suppression.",
+    specialRole: "Micro-Structural Biologist",
+    specialDescription:
+      "Researches protective countermeasures to defend cell walls, lipid membranes, and organelles against cosmic radiation and structural breakdown.",
+    domain: "Space Medicine & Cellular Longevity",
+    domainDescription:
+      "Pharmaceutical sciences, space medicine, cosmic radiation cellular mitigation, and longevity research.",
+    image: "/images/team/JATIN.png",
+    category: "metabolic-biology",
+  },
+  {
+    name: "Merlin Annabelle Suhatam",
+    education: "BSc in Biotechnology | Universitas Pelita Harapan",
+    majorRole: "Human Safety Protocol Designer",
+    majorDescription:
+      "Develops fail-safe communications, telemetry monitoring protocols, and operational safety baselines for human subjects in torpor.",
+    specialRole: "Cardiovascular Hemodynamics Engineer",
+    specialDescription:
+      "Analyzes bio-fluid mechanics, cardiovascular signal dynamics, and blood flow resistance to prevent cardiac failure.",
+    domain: "Telemetry Systems & Cardiovascular Hemodynamics",
+    domainDescription:
+      "Remote telemetry systems, satellite communication protocols, bio-fluid flow dynamics, and human safety workflows.",
+    image: "/images/team/MERLIN_ANABELLE",
+    category: "safety-telemetry",
+  },
+  {
+    name: "Trishna Kunnath Krishnas",
+    education: "B.Tech in Computer Science | NMAM Institute of Technology, Nitte University",
+    majorRole: "Systems Physiologist",
+    majorDescription:
+      "Coordinates whole-body physiological systems, system-level operational loops, and human-factors engineering for spaceflight mission operations.",
+    specialRole: "Ischemia-Reperfusion Specialist",
+    specialDescription:
+      "Designs operational recovery workflows and re-warming protocols to prevent tissue oxidative damage during emergence from torpor.",
+    domain: "Mission Operations & Ischemia-Reperfusion Systems",
+    domainDescription:
+      "Mission operations, human factors in spaceflight, systems thinking, and reperfusion injury mitigation.",
+    image: "/images/team/TRISHNA.png",
+    category: "systems-physiology",
+  }
 
 ];
