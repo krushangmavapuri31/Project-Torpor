@@ -8,9 +8,22 @@ from schemas import SendOTPRequest , VerifyOTPRequest
 from otp_service import generate_otp , hash_otp , get_expiration_time
 from email_service import send_otp_email
 from datetime import datetime , timezone
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://project-torpor.in",
+        "https://www.project-torpor.in",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class EmailValidator(BaseModel):
     email : EmailStr
@@ -64,19 +77,19 @@ def verify_email(
     if not verification:
         return{
             "verified": False,
-            "messeage": "No active verification found"
+            "message": "No active verification found"
         }
 
     if verification.expires_at < datetime.now(timezone.utc):
         return{
             "verified" : False,
-            "messeage" : "OTP has Expired"
+            "message" : "OTP has Expired"
         }
 
     if verification.attempts >= 5:
         return{
             "verified" : False,
-            "messeage" : "Too many incorrect attempts"
+            "message" : "Too many incorrect attempts"
         }
 
     if not verify_otp(data.otp , verification.otp_hashed):
@@ -85,7 +98,7 @@ def verify_email(
 
         return{
             "verified" : False,
-            "messeage" : "Incorrect OTP"
+            "message" : "Incorrect OTP"
         }
 
     verification.verified = True
@@ -93,5 +106,5 @@ def verify_email(
 
     return{
         "verified" : True,
-        "messeage" : "OTP verified successfully"
+        "message" : "OTP verified successfully"
     }

@@ -9,6 +9,7 @@ import * as z from "zod";
 import { supabase } from "@/lib/supabase";
 import FadeIn from "@/components/animations/FadeIn";
 import { motion, AnimatePresence } from "framer-motion";
+import EmailVerification from "@/components/EmailVerification";
 
 
 const backgroundOptions = [
@@ -55,6 +56,8 @@ export default function JoinForm() {
   // Submit status
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [emailVerified, setEmailVerified] = useState(false);
+
 
   const {
     register,
@@ -128,6 +131,13 @@ export default function JoinForm() {
     // Validate "Other" field of study
     if (data.backgrounds.includes("Other") && !otherField.trim()) {
       setOtherFieldError("Please specify your field of study.");
+      return;
+    }
+
+    if (!emailVerified) {
+      setSubmitError(
+        "Please verify your email address before submitting."
+      );
       return;
     }
 
@@ -250,13 +260,19 @@ export default function JoinForm() {
               placeholder="Your full name"
               {...register("fullName")}
             />
-            <FormField
-              label="Email"
-              required
-              type="email"
+            <EmailVerification
+              email={watch("email") || ""}
+              onEmailChange={(email) => {
+                setValue("email", email, {
+                  shouldValidate: true,
+                });
+
+                setEmailVerified(false);
+              }}
+              onVerified={() => {
+                setEmailVerified(true);
+              }}
               error={errors.email?.message}
-              placeholder="you@example.com"
-              {...register("email")}
             />
             <FormField
               label="Current Occupation / Area of Study"
@@ -330,11 +346,10 @@ export default function JoinForm() {
                       className="group flex items-center gap-3 cursor-pointer py-1 select-none"
                     >
                       <div
-                        className={`w-4 h-4 rounded-sm border transition-all duration-300 flex items-center justify-center flex-shrink-0 ${
-                          backgrounds.includes(option)
-                            ? "bg-[#6B8AFD] border-[#6B8AFD]"
-                            : "border-[#2A2A2A] group-hover:border-[#555]"
-                        }`}
+                        className={`w-4 h-4 rounded-sm border transition-all duration-300 flex items-center justify-center flex-shrink-0 ${backgrounds.includes(option)
+                          ? "bg-[#6B8AFD] border-[#6B8AFD]"
+                          : "border-[#2A2A2A] group-hover:border-[#555]"
+                          }`}
                       >
                         {backgrounds.includes(option) && (
                           <Check className="w-3 h-3 text-white" />
@@ -371,11 +386,10 @@ export default function JoinForm() {
                                   }}
                                   placeholder="Please specify your field of study"
                                   autoFocus
-                                  className={`w-full bg-transparent border-b text-[#F5F5F5] font-sans text-sm py-2.5 px-0 placeholder:text-[#444] focus:outline-none transition-colors duration-300 ${
-                                    otherFieldError
-                                      ? "border-red-500/60 focus:border-red-400"
-                                      : "border-[#2A2A2A] focus:border-[#6B8AFD]"
-                                  }`}
+                                  className={`w-full bg-transparent border-b text-[#F5F5F5] font-sans text-sm py-2.5 px-0 placeholder:text-[#444] focus:outline-none transition-colors duration-300 ${otherFieldError
+                                    ? "border-red-500/60 focus:border-red-400"
+                                    : "border-[#2A2A2A] focus:border-[#6B8AFD]"
+                                    }`}
                                 />
                               </div>
                               <AnimatePresence>
