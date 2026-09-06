@@ -1,4 +1,5 @@
 from sqlalchemy import Boolean, Column, DateTime, Integer, String, Text
+from datetime import datetime, timezone
 
 from database import Base
 
@@ -12,5 +13,6 @@ class email_verification(Base):
     verified = Column(Boolean, default = False)
     attempts = Column(Integer, default = 0)
     created_at = Column(
-        DateTime(timezone = True)
+        DateTime(timezone = True),
+        default=lambda: datetime.now(timezone.utc)
     )

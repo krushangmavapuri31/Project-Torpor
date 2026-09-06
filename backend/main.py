@@ -9,7 +9,10 @@ from otp_service import generate_otp , hash_otp , get_expiration_time
 from email_service import send_otp_email
 from datetime import datetime , timezone
 from fastapi.middleware.cors import CORSMiddleware
+import logging
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -52,6 +55,8 @@ def send_otp(
     db.commit()
     db.refresh(verification)
 
+    logger.info(f"Generated new OTP for {data.email} (ID: {verification.id}) expires at {verification.expires_at}")
+
     send_otp_email(data.email, otp)
 
     return {
@@ -70,23 +75,29 @@ def verify_email(
             email_verification.email == data.email,
             email_verification.verified == False
         )
-        .order_by(email_verification.created_at.desc())
+        .order_by(email_verification.id.desc())
         .first()
     )
 
     if not verification:
+        logger.info(f"Verify OTP failed: No active verification found for {data.email}")
         return{
             "verified": False,
             "message": "No active verification found"
         }
 
-    if verification.expires_at < datetime.now(timezone.utc):
+    current_time = datetime.now(timezone.utc)
+    logger.info(f"Verifying OTP ID {verification.id} for {data.email}. Created: {verification.created_at}, Expires: {verification.expires_at}, Current UTC: {current_time}")
+
+    if verification.expires_at < current_time:
+        logger.info(f"OTP ID {verification.id} expired.")
         return{
             "verified" : False,
             "message" : "OTP has Expired"
         }
 
     if verification.attempts >= 5:
+        logger.info(f"OTP ID {verification.id} blocked due to too many incorrect attempts.")
         return{
             "verified" : False,
             "message" : "Too many incorrect attempts"
